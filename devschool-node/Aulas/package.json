@@ -4,11 +4,12 @@
   "description": "",
   "main": "primeiro-arquivo-node.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"    
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "luciara.abreu@gmail.com",
   "license": "ISC",
   "dependencies": {
+    "@types/cors": "^2.8.13",
     "@types/express": "^4.17.17",
     "cors": "^2.8.5",
     "express": "^4.18.2",
