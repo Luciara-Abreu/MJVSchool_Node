@@ -1,5 +1,6 @@
 import StartServer from './server'
-import connectionDB from './loaders/mongodb'
+import connectionDB from './config/mongodb'
+
 
 StartServer()
 connectionDB()
