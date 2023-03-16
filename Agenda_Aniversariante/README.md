@@ -13,4 +13,11 @@ https://www.youtube.com/watch?v=udWiRvvjElQ
 https://www.youtube.com/watch?v=AZ-lgkleUYc
 
 -----------------------------------------------------------------------------------------------------
+startar o mongod
+// acessar a pasta ==>  C:\Program Files\MongoDB\Server\6.0\bin>
+//rodar o comando abaixo
+// mongod --dbpath C:\data
 
+---------------------------------------------------------------------------
+[] - CARREGAR E RECUPERAR IMAGENS NO MONGODB USANDO MONGOOSE
+https://acervolima.com/carregar-e-recuperar-imagens-no-mongodb-usando-mongoose/
