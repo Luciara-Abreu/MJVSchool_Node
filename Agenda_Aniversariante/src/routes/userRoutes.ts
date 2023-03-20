@@ -5,11 +5,12 @@ const RouteUser = express()
 const userController = new UserController()
 
 console.log('')
-console.log('✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨')
-console.log('------------------------------------------------------------')
-console.log('********************** Rotas de User ***********************')
+console.log('✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨')
+console.log('✨ ********** Rotas de User *************** ✨')
+console.log('✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨')
+console.log('')
 
-console.log('********** Rotas de User ***************')
 RouteUser.post('/AddUser', userController.createUser)
+RouteUser.get('/ListAllAnivers', userController.listAllUsers)
 
 export default RouteUser

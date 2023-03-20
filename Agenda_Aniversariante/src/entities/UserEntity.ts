@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import UserClass from '../domain/userClass'
 
 const UserSchema = new mongoose.Schema({
   name: {
@@ -24,10 +25,6 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
-  lastName: {
-    type: String,
-    required: false,
-  },
   fone: {
     type: String,
     required: true,
@@ -38,7 +35,7 @@ const UserSchema = new mongoose.Schema({
   },
 })
 
-const UserModel = mongoose.model('users', UserSchema)
+UserSchema.loadClass(UserClass)
+const User = mongoose.model('users', UserSchema)
 
-export default UserModel
-
+export default User

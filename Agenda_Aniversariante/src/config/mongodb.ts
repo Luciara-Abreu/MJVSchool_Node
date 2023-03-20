@@ -8,24 +8,14 @@ const connectionDB = () => {
   const app = express()
   app.use(express.json())
 
-  const config = mongoose
+  const db = mongoose
     .connect(url, {})
     .then(conn => console.log('Status ==> ', conn.STATES))
-    .catch(err => console.log('Error      ==>', err))
+    .catch(err => console.error.bind(console.log('Error ==>', err)))
+ 
+    return db
 
-  //On Connection
-  mongoose.connection.on('connected', () => {
-    console.log('Connected to database : ' + config)
-  })
-  //On Error
-  mongoose.connection.on('error', err => {
-    console.log('Database error : ' + err)
-  })
 }
 
 export default connectionDB
-
-
-
-
 

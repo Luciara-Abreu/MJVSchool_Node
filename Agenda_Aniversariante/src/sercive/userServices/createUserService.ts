@@ -1,9 +1,12 @@
-import IUserType from '../../interfaces/IUser'
-import UserModel from '../../entities/UserModel'
+import UserEntity from '../../entities/UserEntity'
+import { IUserType } from '../../interfaces/IUser'
+import UserRepository from '../../repository/userRepository'
+
+const userRepository = new UserRepository()
 
 class CreateUserService {
   public async execute({ name, birthDate, sexualOrientation, email, lastEmail, fone, avatar }: IUserType) {
-    const salveUser = await UserModel.create({
+    const salveUser = await UserEntity.create({
       name,
       birthDate,
       sexualOrientation,
@@ -13,6 +16,8 @@ class CreateUserService {
       avatar,
     })
 
+    await userRepository.create(salveUser)
+    //console.log(salveUser)
     return salveUser
   }
 }

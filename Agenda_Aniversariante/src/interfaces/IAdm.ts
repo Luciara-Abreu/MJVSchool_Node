@@ -1,14 +1,21 @@
-import IUserType from './IUser'
+import { initialDataUser, IUserType } from './IUser'
 
-interface IAdmTypeUndefined extends IUserType {
-  id?: string
-  password?: string
-  old_password?: string
-}
 interface IAdmType extends IUserType {
-  id?: string
   password: string
   old_password?: string
 }
 
-export default IAdmType
+const initialDataAdm: IAdmType = {
+  id: '',
+  name: '',
+  birthDate: '',
+  sexualOrientation: '',
+  email: '',
+  lastEmail: '',
+  fone: '',
+  avatar: '',
+  password: '',
+  old_password: '',
+}
+
+export { IAdmType, initialDataAdm }

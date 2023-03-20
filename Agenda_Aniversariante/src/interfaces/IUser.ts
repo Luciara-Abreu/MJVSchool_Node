@@ -1,12 +1,26 @@
 interface IUserType {
   id?: string
   name: string
-  birthDate: Date
+  birthDate: string
   sexualOrientation: string
   email: string
-  lastEmail: string | undefined
+  lastEmail?: string 
   fone: string
   avatar?: string
 }
 
-export default IUserType
+ const initialDataUser: IUserType = {
+  id: '',
+  name: '',
+  birthDate:'',
+  sexualOrientation:'',
+  email: '',
+  lastEmail: '',
+  fone: '',
+  avatar: ''
+}
+export 
+{
+  IUserType,
+  initialDataUser
+}
