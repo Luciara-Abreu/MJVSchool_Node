@@ -21,7 +21,7 @@ class UserController {
   public async listAllUsers(req: Request, res: Response) {
     const listUsers = new ListAllUserService()
     const showUsers = await listUsers.execute()
-    console.log('userController==> ', showUsers)
+    //console.log('userController==> ', showUsers)
     return res.json(showUsers)
   }
 }

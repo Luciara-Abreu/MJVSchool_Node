@@ -4,7 +4,7 @@ class ListAllUserService {
   public execute() {
     const userRepo = new UserRepository()
     const listAllUser = userRepo.listAll()
-    console.log('ListAllUser service ====>', listAllUser)
+    //console.log('ListAllUser service ====>', listAllUser)
     return listAllUser
   }
 }
