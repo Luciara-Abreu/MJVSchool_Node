@@ -1,29 +1,24 @@
-class UserRepository  { 
-  users = []
+class UserRepository {
+  users: string[] = []
 
-    constructor(){
-      this.users =  []
-    }
+  constructor() {
+    this.users = []
+  }
 
-    create(user:any){
-      return user
-    }
+  public salve(user: any) {
+    console.log('userRepository ==> ', user)
+    this.users.push(user)
+  }
 
-    listAll(){
-      return this.users
-    }
+  listAll() {
+    return this.users
+  }
 
-    delete(id:any){
-    }
+  delete(id: any) {}
 
-    update(id:any){
-    }
+  update(id: any) {}
 
-    listarOne(id:any){
-    }
-    
+  listarOne(id: any) {}
 }
 
 export default UserRepository
-
-

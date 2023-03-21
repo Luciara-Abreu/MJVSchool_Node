@@ -1,3 +1,4 @@
+import UserClass from '../../domain/userClass'
 import UserEntity from '../../entities/UserEntity'
 import { IUserType } from '../../interfaces/IUser'
 import UserRepository from '../../repository/userRepository'
@@ -16,8 +17,8 @@ class CreateUserService {
       avatar,
     })
 
-    await userRepository.create(salveUser)
-    //console.log(salveUser)
+    userRepository.salve(salveUser)
+
     return salveUser
   }
 }
