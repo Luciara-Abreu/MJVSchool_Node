@@ -9,8 +9,8 @@ app.use(express.json());
 const router = Router();
 
 router.get("/", (req: Request, res: Response) => {
-  const helloWord = { message: "Aplicação funcionando com sucesso!" };
-  res.send(helloWord);
+  const healtCheck = { message: "Aplicação funcionando com sucesso!" };
+  res.send(healtCheck);
 });
 app.use(router);
 
