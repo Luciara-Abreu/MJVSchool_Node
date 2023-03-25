@@ -12,4 +12,17 @@ Vídeo 2)
 Exercício = null
 
 Vídeo 3) 
-[]
+[] Aula sobre os tipos de requisições e status das requisições.
+
+Exercícios:
+
+https://github.com/NathanCarlos/devschool-node/blob/main/rotas.md
+
+
+Links aula:
+
+https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Methods
+https://httpstatusdogs.com/
+https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status
+https://www.4devs.com.br/gerador_de_cpf
+https://insomnia.rest/download
