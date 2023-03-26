@@ -1,12 +1,14 @@
 import express from 'express'
-import RouteUser from './routes/userRoutes'
+import cors from 'cors'
+import UserRoute from './routes/userRoutes'
 
 const StartServer = () => {
-  const porta = 8080
+  const porta = 3000
 
   const app = express()
+  app.use(cors())
   app.use(express.json())
-  app.use(RouteUser)
+  app.use(UserRoute)
 
   app.listen(porta, () => {
     console.log('')
