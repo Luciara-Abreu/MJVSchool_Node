@@ -4,9 +4,9 @@ interface IUserType {
   birthDate: string
   sexualOrientation: string
   email: string
-  lastEmail?: string 
+  lastEmail: string 
   fone: string
-  avatar?: string
+  avatar: string
 }
 
  const initialDataUser: IUserType = {

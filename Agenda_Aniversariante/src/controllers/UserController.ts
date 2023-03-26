@@ -1,9 +1,12 @@
 import { Request, Response } from 'express'
+import { IUserType } from '../interfaces/IUser'
 import CreateUserService from '../sercive/userServices/createUserService'
 import ListAllUserService from '../sercive/userServices/listAllUserService'
 
+
 class UserController {
-  public async createUser(req: Request, res: Response): Promise<Response> {
+    public async createUser(req: Request, res: Response): Promise<Response> {
+
     const { name, birthDate, sexualOrientation, email, lastEmail, fone, avatar } = req.body
     const addneWUser = new CreateUserService()
     const thisUser = await addneWUser.execute({
@@ -13,9 +16,9 @@ class UserController {
       email,
       lastEmail,
       fone,
-      avatar,
+      avatar
     })
-    return res.json(thisUser)
+  return res.json(thisUser)
   }
 
   public async listAllUsers(req: Request, res: Response) {

@@ -7,9 +7,8 @@ const UserSchema = new mongoose.Schema({
     unique: true,
     required: true,
   },
-  birthDate: {
+  birthDate: {                                        
     type: Date,
-    unique: true,
     required: true,
   },
   sexualOrientation: {
