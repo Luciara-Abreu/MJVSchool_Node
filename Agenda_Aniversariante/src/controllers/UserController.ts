@@ -1,5 +1,4 @@
 import { Request, Response } from 'express'
-import { IUserType } from '../interfaces/IUser'
 import CreateUserService from '../sercive/userServices/createUserService'
 import ListAllUserService from '../sercive/userServices/listAllUserService'
 
