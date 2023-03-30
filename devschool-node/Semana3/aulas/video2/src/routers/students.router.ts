@@ -99,7 +99,7 @@ studentsRouter.put('/update/:document', (req: Request, res: Response) => {
   if (studentIndex === -1) {
     return res.status(400).send({ message: 'Estudante não encontrado' })
   }
-  students[studentIndex] = req.body
+  students[studentIndex] = req.body 
   res.status(200).send({ message: 'Estudante atualizado com sucesso' })
 })
 export default studentsRouter

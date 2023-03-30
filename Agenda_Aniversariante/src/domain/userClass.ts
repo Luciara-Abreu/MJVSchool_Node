@@ -2,7 +2,8 @@ import { IUserType } from "../interfaces/IUser"
 
 class UserClass {  
   
-  constructor({name, birthDate, sexualOrientation, email, lastEmail, fone, avatar}: IUserType){
+  constructor({id, name, birthDate, sexualOrientation, email, lastEmail, fone, avatar}: IUserType){
+    id = id
     name = name
     birthDate = birthDate
     sexualOrientation = sexualOrientation
