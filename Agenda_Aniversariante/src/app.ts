@@ -3,7 +3,7 @@ import cors from 'cors'
 import UserRoute from './routes/userRoutes'
 
 const StartServer = () => {
-  const porta = 3000
+  const porta = 3004
 
   const app = express()
   app.use(cors())
