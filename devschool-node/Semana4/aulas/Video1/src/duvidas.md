@@ -5,3 +5,4 @@ Nesse caso não teria que ter uma validação para informar no front que todos o
 Ou não teria que ter uma forma de atualizar apenas um dado?
 
 ---
+Sobre criaçao de tabelas no banco, vamos usar migration?
