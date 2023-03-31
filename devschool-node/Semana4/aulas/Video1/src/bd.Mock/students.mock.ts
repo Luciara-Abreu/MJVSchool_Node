@@ -1,6 +1,6 @@
-import { Student } from "../models/student.model";
+import { studentModel } from "../models/student.model";
 
-  const studentsMock: Array<Student> = [
+  const studentsMock: Array<studentModel> = [
   {
     name: 'Luci Abreu',
     email: 'luci.a@gmail.com',

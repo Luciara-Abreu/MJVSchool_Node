@@ -1,54 +1,72 @@
 import { Request, Response, Router } from 'express'
-import Products from './mockProducts'
+import ProductService from '../service/product.service'
 
 const ProductsRouter = Router()
 
 //listar todos
 ProductsRouter.get('/', (req: Request, res: Response) => {
-  res.send(Products)
+  try {
+    const listProducts = ProductService.getAll()
+    res.send(listProducts)
+  } catch (error: any) {
+    res.status(400).send({ message: error.message })
+  }
 })
 
 //listar um
 ProductsRouter.get('/listOne/:id', (req: Request, res: Response) => {
-  const { id } = req.params
-  const prod = Products.find(prodId => prodId.id === Number(id))
-  if (!prod) return res.status(400).send({ message: 'Produto não encontrado' })
-  res.send(prod)
-})
-
-//atualizar
-ProductsRouter.put('/update/:id', (req: Request, res: Response) => {
-  const { id } = req.params
-
-  const prod = Products.findIndex(prodId => prodId.id === Number(id))
-  if (prod === -1) {
-    return res.status(400).send({ message: 'Produto não encontrado' })
-  }  
-  Products[prod] = req.body
-  res.status(200).send({ message: 'Produto atualizado com sucesso' })
-})
-
-//deletar
-ProductsRouter.delete('/remove/:id', (req: Request, res: Response) => {
-  const { id } = req.params
-  const prod = Products.findIndex(prodId => prodId.id === Number(id))
-  if (prod === -1) {
-    return res.status(400).send({ message: 'Produto não encontrado' })
+  try {
+    const prod = ProductService.getById(req.params.id)
+    res.send(prod)
+  } catch (error: any) {
+    res.status(400).send({ message: error.message })
   }
-  Products.splice(prod, 1)
-  res.status(200).send({ message: 'Produto deletado com sucesso!' })
 })
 
 //add Produto
 ProductsRouter.post('/', (req: Request, res: Response) => {
-  const { description } = req.body
-  const prod = Products.find(prodId => prodId.description === String(description))
-
-  if (prod) {
-    return res.status(400).send({ message: 'Ops!! Produto já cadastrado, favor atualizar' })
+  try {
+    ProductService.create(req.body)
+    res.status(201).send({ message: 'Produto add com sucesso!' })
+  } catch (error: any) {
+    res.status(400).send({ message: error.message })
   }
-  Products.push(req.body)
-  res.status(201).send({ message: 'Produto add com sucesso!' })
+})
+
+//atualizar
+/*ProductsRouter.put('/update/:id', (req: Request, res: Response) => {
+  const { description, img, price, quantity } = req.body
+  const id = Number(req.params.id)
+
+  try {
+    ProductService.update({ id, description, img, price, quantity })
+    res.status(200).send({ message: 'Produto atualizado com sucesso' })
+  } catch (error: any) {
+    res.status(400).send({ message: error.message })
+  }
+})*/
+
+ProductsRouter.put('/update/:id', (req: Request, res: Response) => {
+  //const {description, img, price, quantity} = req.body
+  const id = req.params.id
+
+  try {
+    //ProductService.update({id, description, img, price, quantity })
+    ProductService.update(id, req.body)
+    res.status(200).send({ message: 'Produto atualizado com sucesso' })
+  } catch (error: any) {
+    res.status(400).send({ message: error.message })
+  }
+})
+
+//deletar
+ProductsRouter.delete('/remove/:id', (req: Request, res: Response) => {
+  try {
+    ProductService.remove(req.params.id)
+    res.status(200).send({ message: 'Produto deletado com sucesso!' })
+  } catch (error: any) {
+    res.status(400).send({ message: error.message })
+  }
 })
 
 export default ProductsRouter
