@@ -14,13 +14,6 @@ class StudentsService {
     const newStudent = studentsMock.push(student)
     return newStudent
   }
-  remove(document: string) {
-    const studentIndex = studentsMock.findIndex(student => student.document === document)
-    if (studentIndex === -1) {
-      throw new Error('Estudante não encontrado')
-    }
-    studentsMock.splice(studentIndex, 1)
-  }
 
   update(document: string, student: studentModel) {
     const studentIndex = studentsMock.findIndex(student => student.document === document)
@@ -28,6 +21,14 @@ class StudentsService {
       throw new Error('Estudante não encontrado')
     }
     studentsMock[studentIndex] = student
+  }
+
+    remove(document: string) {
+    const studentIndex = studentsMock.findIndex(student => student.document === document)
+    if (studentIndex === -1) {
+      throw new Error('Estudante não encontrado')
+    }
+    studentsMock.splice(studentIndex, 1)
   }
 }
 
