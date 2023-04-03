@@ -1,9 +1,9 @@
 import { Request, Response } from 'express'
-import createPostService from '../sercive/postsServices/createPostService'
-import listAllPostService from '../sercive/postsServices/listAllPostService'
-import listOnePostService from '../sercive/postsServices/listOnePostService'
-import deletePostService from '../sercive/postsServices/deletePostService'
-import updatePostService from '../sercive/postsServices/updatePostService'
+import createPostService from '../sercive/postsServices/create.post.service'
+import listAllPostService from '../sercive/postsServices/list.posts.service'
+import listOnePostService from '../sercive/postsServices/list.one.post.service'
+import deletePostService from '../sercive/postsServices/delete.post.service'
+import updatePostService from '../sercive/postsServices/update.post.service'
 
 class PostController {
   public async createPost(req: Request, res: Response) {

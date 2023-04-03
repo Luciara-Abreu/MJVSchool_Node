@@ -1,9 +1,7 @@
 import { Router } from 'express'
-import userRoute from './userRoutes/userRoutes'
-import postRoute from './postRoutes/postRoutes'
-import admRoute from './admRoutes/admRoutes'
-
-
+import userRoute from './userRoutes/user.routes'
+import postRoute from './postRoutes/post.routes'
+import admRoute from './admRoutes/adm.routes'
 
 const route = Router()
 route.use('/Users', userRoute)

@@ -1,5 +1,5 @@
 import { UserMock } from '../../config/userMock'
-import UserModel from '../../model/userModel'
+import UserModel from '../../model/user.model'
 
 class UpdateUserService {
   public execute(id: string, user: Partial<UserModel>) {

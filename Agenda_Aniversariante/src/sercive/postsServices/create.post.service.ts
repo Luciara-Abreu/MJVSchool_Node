@@ -1,17 +1,17 @@
 import { PostMock } from '../../config/postMocks'
 import { UserMock } from '../../config/userMock'
 import IPostType from '../../interfaces/IPost'
-import PostModel from '../../model/postModel'
+import PostModel from '../../model/post.model'
 
 class CreatePostService {
   public async execute(newPost: IPostType): Promise<PostModel> {
     const userId = UserMock.findIndex(user => user.id === Number(newPost.userID))
     if (userId === -1) {
-      throw new Error('Usuário não encontrado')
+      throw new Error('Post não encontrado')
     }
-    const postId = PostMock.find(post => post.title === newPost.title && post.content === newPost.content)
+    const postId = PostMock.find(post => post.id === newPost.id || post.title === newPost.title || post.content === newPost.content)
     if (postId) {
-      throw new Error('Post Ja cadastrado')
+      throw new Error('Post já cadastrado')
     }
     await PostMock.push(newPost)
     return newPost

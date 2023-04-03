@@ -1,5 +1,5 @@
 import { PostMock } from '../../config/postMocks'
-import PostModel from '../../model/postModel'
+import PostModel from '../../model/post.model'
 
 class UpdatePostService {
   public execute(id: string, post: Partial<PostModel>) {

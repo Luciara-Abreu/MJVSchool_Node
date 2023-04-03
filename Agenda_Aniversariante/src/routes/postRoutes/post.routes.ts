@@ -1,5 +1,5 @@
 import express from 'express'
-import postController from '../../controllers/PostController'
+import postController from '../../controllers/post.controller'
 
 const postRoute = express()
 

@@ -1,6 +1,6 @@
 import { AdmMock } from '../../config/admMock'
 import { IAdmType } from '../../interfaces/IAdm'
-import AdmModel from '../../model/admModel'
+import AdmModel from '../../model/adm.model'
 
 
 class CreateAdmService{

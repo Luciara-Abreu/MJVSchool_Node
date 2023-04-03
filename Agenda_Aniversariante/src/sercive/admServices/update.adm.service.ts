@@ -1,5 +1,5 @@
 import { AdmMock } from '../../config/admMock'
-import AdmModel from '../../model/admModel'
+import AdmModel from '../../model/adm.model'
 
 
 class UpdateUserService {

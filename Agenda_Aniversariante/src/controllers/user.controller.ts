@@ -1,9 +1,9 @@
 import { Request, Response } from 'express'
-import CreateUserService from '../sercive/userServices/createUserService'
-import ListAllUserService from '../sercive/userServices/listAllUserService'
-import ListOneUserService from '../sercive/userServices/listOneUserService'
-import updateUserService from '../sercive/userServices/updateUserService'
-import DeleteUserService from '../sercive/userServices/deleteUserService'
+import CreateUserService from '../sercive/userServices/create.user.service'
+import ListAllUserService from '../sercive/userServices/list.users.service'
+import ListOneUserService from '../sercive/userServices/list.one.user.service'
+import updateUserService from '../sercive/userServices/update.user.service'
+import DeleteUserService from '../sercive/userServices/delete.user.service'
 
 class UserController {
   public async createUser(req: Request, res: Response) {

@@ -1,7 +1,7 @@
 //Objeto que contem os dados do ADM
 
 import { IAdmType } from "../interfaces/IAdm"
-import UserModel from "./userModel"
+import UserModel from "./user.model"
 
 class AdmModel extends UserModel{
   constructor({id, name, birthDate, sexualOrientation, email, lastEmail, fone, avatar, password}: IAdmType) {

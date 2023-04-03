@@ -1,6 +1,6 @@
 import { UserMock } from '../../config/userMock'
 import { IUserType } from '../../interfaces/IUser'
-import UserModel from '../../model/userModel'
+import UserModel from '../../model/user.model'
 
 class CreateUserService {
   public async execute(newUSer: IUserType): Promise<UserModel> {

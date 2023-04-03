@@ -1,5 +1,6 @@
 import mongoose from 'mongoose'
-import AdmClass from '../model/admClass'
+import AdmModel from '../model/adm.model'
+
 
 const AdmSchema = new mongoose.Schema({
   name: {
@@ -38,7 +39,7 @@ const AdmSchema = new mongoose.Schema({
     required: true,
   },
 })
-AdmSchema.loadClass(AdmClass)
+AdmSchema.loadClass(AdmModel)
 const Adm = mongoose.model('adms', AdmSchema)
 
 export default Adm

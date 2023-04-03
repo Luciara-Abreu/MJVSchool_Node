@@ -1,9 +1,9 @@
 import { Request, Response } from 'express'
-import createAdmService from '../sercive/admServices/createAdmService'
-import listAllAdmService from '../sercive/admServices/listAllAdmService'
-import listOneAdmService from '../sercive/admServices/listOneAdmService'
-import updateAdmService from '../sercive/admServices/updateAdmService'
-import deleteAdmService from '../sercive/admServices/deleteAdmService'
+import createAdmService from '../sercive/admServices/create.adm.service'
+import listAllAdmService from '../sercive/admServices/list.adms.service'
+import listOneAdmService from '../sercive/admServices/list.one.adm.service'
+import updateAdmService from '../sercive/admServices/update.adm.service'
+import deleteAdmService from '../sercive/admServices/delete.adm.service'
 
 class AdmController {
   public async createAdm(req: Request, res: Response) {
