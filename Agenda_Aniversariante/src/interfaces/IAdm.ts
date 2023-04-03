@@ -1,12 +1,11 @@
-import { initialDataUser, IUserType } from './IUser'
+import { IUserType } from './IUser'
 
 interface IAdmType extends IUserType {
   password: string
-  old_password?: string
 }
 
 const initialDataAdm: IAdmType = {
-  id: '',
+  id: 0,
   name: '',
   birthDate: '',
   sexualOrientation: '',
@@ -14,8 +13,7 @@ const initialDataAdm: IAdmType = {
   lastEmail: '',
   fone: '',
   avatar: '',
-  password: '',
-  old_password: '',
+  password: ''
 }
 
 export { IAdmType, initialDataAdm }

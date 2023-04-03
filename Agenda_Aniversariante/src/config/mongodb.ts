@@ -9,14 +9,13 @@ const connectionDB = () => {
   app.use(express.json())
 
   const db = mongoose
-    .connect(url, {})    
-      .then((conn) => {          
-        console.log('✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨')
-        console.log(`✨ 🏆 MongoDb ==> `, conn.STATES[1], ` 🏆            ✨`)
-        console.log('✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨')
-        console.log('')
-      })
-      .catch(err => console.error.bind(console.log('Error ==>', err)))
+    .connect(url, {})
+    .then(conn => {
+      console.log(`✨ 🏆 MongoDb ==> `, conn.STATES[1], ` 🏆            ✨`)
+      console.log('✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨')
+      console.log('')
+    })
+    .catch(err => console.error.bind(console.log('Error ==>', err)))
 
   return db
 }

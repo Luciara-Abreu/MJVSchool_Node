@@ -10,7 +10,7 @@ interface IUserType {
 }
 
  const initialDataUser: IUserType = {
-  id: '',
+  id: 0,
   name: '',
   birthDate:'',
   sexualOrientation:'',

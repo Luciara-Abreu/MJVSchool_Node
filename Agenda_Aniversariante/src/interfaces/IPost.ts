@@ -1,5 +1,5 @@
 interface IPostType {
-  id?: string
+  id?: number
   title: string
   content: string
   userID?: string
