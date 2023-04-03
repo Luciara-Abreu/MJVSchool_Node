@@ -1,24 +1,15 @@
-import UserEntity from '../../entities/UserEntity'
+import { UserMock } from '../../config/userMock'
 import { IUserType } from '../../interfaces/IUser'
-import UserRepository from '../../repository/userRepository'
-
-const userRepo = new UserRepository()
+import UserModel from '../../model/userModel'
 
 class CreateUserService {
-  public async execute({ name, birthDate, sexualOrientation, email, lastEmail, fone, avatar }: IUserType) {
-    const salveUser = await UserEntity.create({
-      name,
-      birthDate,
-      sexualOrientation,
-      email,
-      lastEmail,
-      fone,
-      avatar,
-    })
-
-    userRepo.adicionar({ name, birthDate, sexualOrientation, email, lastEmail, fone, avatar })
-    return salveUser
+  public async execute(newUSer: IUserType): Promise<UserModel> {
+      const userId = UserMock.find(user => user.id === newUSer.id)
+    if (userId) {
+      throw new Error('Usuário já cadastrado')
+    }
+    await UserMock.push(newUSer)
+    return newUSer
   }
 }
-
-export default CreateUserService
+export default new CreateUserService()

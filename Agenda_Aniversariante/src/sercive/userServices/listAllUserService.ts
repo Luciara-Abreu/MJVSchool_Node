@@ -1,12 +1,12 @@
-import UserEntity from "../../entities/UserEntity"
+import { UserMock } from '../../config/userMock'
 
 class ListAllUserService {
   public execute() {
-    const userRepo = new UserEntity()
-    const listAllUser = userRepo
-    console.log('ListAllUser service ====>', listAllUser)
-    return listAllUser
+    if (UserMock === null) {
+      throw new Error('não existe produtos na lista 👻')
+    }
+    return UserMock
   }
 }
 
-export default ListAllUserService
+export default new ListAllUserService()
