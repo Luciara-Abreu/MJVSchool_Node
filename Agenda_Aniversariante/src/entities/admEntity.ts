@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import AdmClass from '../domain/admClass'
+import AdmClass from '../model/admClass'
 
 const AdmSchema = new mongoose.Schema({
   name: {

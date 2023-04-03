@@ -1,5 +1,6 @@
 import mongoose from 'mongoose'
-import UserClass from '../domain/userClass'
+import UserModel from '../model/userModel'
+
 
 const UserSchema = new mongoose.Schema({
   name: {
@@ -7,7 +8,7 @@ const UserSchema = new mongoose.Schema({
     unique: true,
     required: true,
   },
-  birthDate: {                                        
+  birthDate: {
     type: Date,
     required: true,
   },
@@ -34,7 +35,7 @@ const UserSchema = new mongoose.Schema({
   },
 })
 
-UserSchema.loadClass(UserClass)
-const User = mongoose.model('users', UserSchema)
+UserSchema.loadClass(UserModel)
+const UserEntity = mongoose.model('users', UserSchema)
 
-export default User
+export default UserEntity
