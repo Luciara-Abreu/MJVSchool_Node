@@ -34,24 +34,10 @@ ProductsRouter.post('/', (req: Request, res: Response) => {
 })
 
 //atualizar
-/*ProductsRouter.put('/update/:id', (req: Request, res: Response) => {
-  const { description, img, price, quantity } = req.body
-  const id = Number(req.params.id)
-
-  try {
-    ProductService.update({ id, description, img, price, quantity })
-    res.status(200).send({ message: 'Produto atualizado com sucesso' })
-  } catch (error: any) {
-    res.status(400).send({ message: error.message })
-  }
-})*/
-
 ProductsRouter.put('/update/:id', (req: Request, res: Response) => {
-  //const {description, img, price, quantity} = req.body
   const id = req.params.id
 
   try {
-    //ProductService.update({id, description, img, price, quantity })
     ProductService.update(id, req.body)
     res.status(200).send({ message: 'Produto atualizado com sucesso' })
   } catch (error: any) {
