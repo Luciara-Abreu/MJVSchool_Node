@@ -4,41 +4,42 @@ import ProductService from '../service/product.service'
 const ProductsRouter = Router()
 
 //listar todos
-ProductsRouter.get('/', (req: Request, res: Response) => {
+ProductsRouter.get('/', async (req: Request, res: Response) => {
   try {
-    const listProducts = ProductService.getAll()
-    res.send(listProducts)
+    const listProducts = await ProductService.getAll()
+    res.status(200).send(listProducts)
   } catch (error: any) {
     res.status(400).send({ message: error.message })
   }
 })
 
 //listar um
-ProductsRouter.get('/listOne/:id', (req: Request, res: Response) => {
+ProductsRouter.get('/listOne/:id', async (req: Request, res: Response) => {
+  const id = req.params.id
   try {
-    const prod = ProductService.getById(req.params.id)
-    res.send(prod)
+    const prod = await ProductService.getOne(id)
+    res.status(200).send(prod)
   } catch (error: any) {
     res.status(400).send({ message: error.message })
   }
 })
 
 //add Produto
-ProductsRouter.post('/', (req: Request, res: Response) => {
+ProductsRouter.post('/', async (req: Request, res: Response) => {
+   const id = req.params.id
   try {
-    ProductService.create(req.body)
-    res.status(201).send({ message: 'Produto add com sucesso!' })
+    await ProductService.create(id, req.body)
+    res.status(200).send({ message: 'Produto add com sucesso!' })
   } catch (error: any) {
     res.status(400).send({ message: error.message })
   }
 })
 
 //atualizar
-ProductsRouter.put('/update/:id', (req: Request, res: Response) => {
+ProductsRouter.patch('/update/:id', async (req: Request, res: Response) => {
   const id = req.params.id
-
   try {
-    ProductService.update(id, req.body)
+    await ProductService.update(id, req.body)
     res.status(200).send({ message: 'Produto atualizado com sucesso' })
   } catch (error: any) {
     res.status(400).send({ message: error.message })
@@ -46,9 +47,9 @@ ProductsRouter.put('/update/:id', (req: Request, res: Response) => {
 })
 
 //deletar
-ProductsRouter.delete('/remove/:id', (req: Request, res: Response) => {
+ProductsRouter.delete('/remove/:id', async (req: Request, res: Response) => {
   try {
-    ProductService.remove(req.params.id)
+    await ProductService.remove(req.params.id)
     res.status(200).send({ message: 'Produto deletado com sucesso!' })
   } catch (error: any) {
     res.status(400).send({ message: error.message })
