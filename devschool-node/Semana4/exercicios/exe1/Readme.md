@@ -26,3 +26,15 @@ https://httpstatusdogs.com/
 https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status
 https://www.4devs.com.br/gerador_de_cpf
 https://insomnia.rest/download
+
+
+--------------------------------------------------------------------------------
+SEMANA 4
+
+intalar mongoose
+npm install mongosse
+npm install mongosse dotenv --save
+https://www.mongodb.com/docs/manual/reference/operator/aggregation/lookup/
+
+https://www.npmjs.com/package/mongoose
+https://www.npmjs.com/package/dotenv
