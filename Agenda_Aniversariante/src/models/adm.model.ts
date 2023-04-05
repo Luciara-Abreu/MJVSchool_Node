@@ -1,8 +1,6 @@
 import mongoose from 'mongoose'
-import AdmModel from '../model/adm.model'
 
-
-const AdmSchema = new mongoose.Schema({
+const admSchema = new mongoose.Schema({
   name: {
     type: String,
     unique: true,
@@ -38,8 +36,11 @@ const AdmSchema = new mongoose.Schema({
     typw: Number,
     required: true,
   },
+  createdAt: {
+    type: Date,
+    default: new Date(),
+  }
 })
-AdmSchema.loadClass(AdmModel)
-const Adm = mongoose.model('adms', AdmSchema)
 
+const Adm = mongoose.model('Adms', admSchema)
 export default Adm

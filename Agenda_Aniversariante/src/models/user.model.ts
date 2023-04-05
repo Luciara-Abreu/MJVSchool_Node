@@ -30,10 +30,13 @@ const userSchema = new mongoose.Schema({
   avatar: {
     data: Buffer,
     contentType: String,
-  },
+  },  
+  createdAt: {
+    type: Date,
+    default: new Date(),
+  }
 })
 
 
 const User = mongoose.model('Users', userSchema)
-
 export default User

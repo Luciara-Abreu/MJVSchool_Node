@@ -1,8 +1,6 @@
 import mongoose from 'mongoose'
-import PostModel from '../model/post.model'
 
-
-const PostSchema = new mongoose.Schema({
+const postSchema = new mongoose.Schema({
   title: {
     type: String,
     unique: true,
@@ -16,10 +14,13 @@ const PostSchema = new mongoose.Schema({
   userID: {
     type: String,
     required: true,
+  },  
+  createdAt: {
+    type: Date,
+    default: new Date(),
   }
 })
 
-PostSchema.loadClass(PostModel)
-const PostEntity = mongoose.model('posts', PostSchema)
+const Post = mongoose.model('Posts', postSchema)
+export default Post
 
-export default PostEntity
