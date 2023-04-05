@@ -1,7 +1,3 @@
-import { PostMock } from '../../config/postMocks'
-import { UserMock } from '../../config/userMock'
-import IPostType from '../../interfaces/IPost'
-import PostModel from '../../model/post.model'
 
 class CreatePostService {
   public async execute(newPost: IPostType): Promise<PostModel> {
