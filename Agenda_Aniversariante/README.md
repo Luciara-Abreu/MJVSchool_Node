@@ -38,6 +38,5 @@ https://acervolima.com/carregar-e-recuperar-imagens-no-mongodb-usando-mongoose/
 
 
 
-Conhecimento de: JavaScript, Sequelise, typeOrm,  
-Html, CSS, Styled-Components, Bancos de Dados: MySql, Postgres, Oracle, Firestore, 
-linguagem SQL, plSql... Excel, versionamento Git, CA Service Desk Manager, ServiceNow, Microsoft Azure
+
+
