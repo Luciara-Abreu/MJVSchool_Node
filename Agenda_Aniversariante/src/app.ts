@@ -1,6 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import route from './routes'
+import conectionDb from './config/database'
 
 const StartServer = () => {
   const porta = 3004
@@ -10,10 +11,14 @@ const StartServer = () => {
   app.use(express.json())
   app.use(route)
 
-  app.listen(porta, () => {
+  conectionDb.then(() => {
     console.log('')
     console.log('✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨')
-    console.log(`✨ 🏆 Server started on port  🏆`, porta, ` 🏆   ✨`)
+    console.log('✨ 🏆 Banco de dados conectado 🏆 ✨')
+    app.listen(porta, () => {
+      console.log('✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨')
+      console.log(`✨ 🏆 Server started on port  🏆`, porta, ` 🏆   ✨`)
+    })
   })
 }
 
