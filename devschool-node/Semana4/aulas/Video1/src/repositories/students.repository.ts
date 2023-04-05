@@ -1,4 +1,3 @@
-import IStudent from '../interfaces/student.interface'
 import Student from '../models/student.model'
 
 class StudentRepository {
@@ -13,11 +12,6 @@ class StudentRepository {
   create(student: typeof Student){
     return Student.create(student)
   }
-
- /* create({name, email, document, password, age, fone}: IStudent) {
-    const newStudent = Student.create({name, email, document, password, age, fone})
-   return newStudent
-  }*/
 
   update(document: string, student: Partial<typeof Student>) {
     return Student.updateOne({ document: document }, { $set: student })

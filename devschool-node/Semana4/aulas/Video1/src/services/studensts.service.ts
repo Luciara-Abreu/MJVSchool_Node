@@ -7,8 +7,8 @@ class StudentsService {
     return StudentRepository.getAll()
   }
 
-  getByDocument(document: string) {
-    const studentIndex = StudentRepository.getByDocument(document)
+  async getByDocument(document: string) {
+    const studentIndex = await StudentRepository.getByDocument(document)
     if (!studentIndex) {
       throw new Error('Estudante não encontrado')
     }

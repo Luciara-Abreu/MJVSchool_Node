@@ -32,7 +32,7 @@ export const studentSchema = new Schema({
   },
   createdAt: {
     type: Date,
-    dafault: new Date(),
+    default: new Date(),
   },
 })
 
