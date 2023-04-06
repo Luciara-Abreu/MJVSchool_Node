@@ -1,5 +1,8 @@
+import { getCombinedNodeFlags } from 'typescript'
 import Post from '../models/post.model'
+import User from '../models/user.model'
 import postRepository from '../repository/post.repository'
+import userRepository from '../repository/user.repository'
 
 class PostService {
   async getAll() {
@@ -23,7 +26,7 @@ class PostService {
     const postContent = await postRepository.getByContent(content)
     const user = await postRepository.getByUserId(userId)
 
-    if (!postTitle && !postContent && !user) {
+    if (!postTitle || (!postContent && !user)) {
       return await postRepository.create(newPost)
     } else {
       throw new Error('Mensagem já cadastrada para esse usuário')
@@ -46,5 +49,26 @@ class PostService {
     }
     await postRepository.remove(id)
   }
+
+  async listPostForUSer(id: string, userId: string) {
+    const idUser = await userRepository.getById(id)
+    if (!idUser) {
+      throw new Error('Usuário não encontrado 👻')
+    }
+    const userPost = await postRepository.getUserId(id)
+    if (!userPost) {
+      throw new Error('Mensagem não encontrada 👻')
+    }
+    const showList = {
+      idUser,
+      userPost,
+    }
+    return showList
+  }
 }
+
 export default new PostService()
+
+
+
+
