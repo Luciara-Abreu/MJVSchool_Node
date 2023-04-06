@@ -1,5 +1,4 @@
-import mongoose from 'mongoose'
-import User from './user.model'
+import mongoose, { Schema } from 'mongoose'
 
 const postSchema = new mongoose.Schema({
   title: {
@@ -10,10 +9,11 @@ const postSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  _id: {
+  userId: {
+    //  type: Schema.Types.ObjectId,
     type: String,
     required: true,
-},
+  },
   createdAt: {
     type: Date,
     default: new Date(),

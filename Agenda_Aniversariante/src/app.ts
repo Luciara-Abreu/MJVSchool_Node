@@ -1,8 +1,8 @@
+import * as dotenv from 'dotenv'
 import express from 'express'
 import cors from 'cors'
 import route from './routes'
 import conectionDb from './config/database'
-import * as dotenv from 'dotenv'
 
 const StartServer = () => {
   const porta = process.env.PORT_SERVER

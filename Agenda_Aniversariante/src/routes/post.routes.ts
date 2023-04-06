@@ -58,4 +58,16 @@ postRoute.delete('/remove/:id', async (req: Request, res: Response) => {
   }
 })
 
+//listar posts de um usuário
+postRoute.get('/postUser/:id', async (req: Request, res: Response) => {
+  const { id } = req.params
+  const { userId } = req.body
+  try {
+    const data = await postService.listPostForUSer(id, userId)
+    res.status(200).send(data)
+  } catch (error: any) {
+    res.status(400).send({ message: error.message })
+  }
+})
+
 export default postRoute
