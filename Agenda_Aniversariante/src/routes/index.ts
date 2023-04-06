@@ -1,11 +1,11 @@
 import { Router } from 'express'
-import userRoute from './userRoutes/user.routes'
-import postRoute from './postRoutes/post.routes'
-import admRoute from './admRoutes/adm.routes'
+import userRoute from './user.routes'
+import admRoute from './adm.routes'
+import postRoute from './post.routes'
 
 const route = Router()
-route.use('/Users', userRoute)
-route.use('/Posts', postRoute)
-route.use('/Adms', admRoute)
+route.use('/user', userRoute)
+route.use('/post', postRoute)
+route.use('/adm', admRoute)
 
 export default route
