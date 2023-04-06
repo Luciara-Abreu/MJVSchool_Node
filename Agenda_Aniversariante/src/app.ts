@@ -2,9 +2,10 @@ import express from 'express'
 import cors from 'cors'
 import route from './routes'
 import conectionDb from './config/database'
+import * as dotenv from 'dotenv'
 
 const StartServer = () => {
-  const porta = 3004
+  const porta = process.env.PORT_SERVER
 
   const app = express()
   app.use(cors())
@@ -14,10 +15,10 @@ const StartServer = () => {
   conectionDb.then(() => {
     console.log('')
     console.log('✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨')
-    console.log('✨ 🏆 Banco de dados conectado 🏆 ✨')
+    console.log('✨ 🏆 Banco de dados conectado 🏆           ✨')
     app.listen(porta, () => {
+      console.log(`✨ 🏆 Server started on port   🏆`, porta, ` 🏆  ✨`)
       console.log('✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨')
-      console.log(`✨ 🏆 Server started on port  🏆`, porta, ` 🏆   ✨`)
     })
   })
 }
