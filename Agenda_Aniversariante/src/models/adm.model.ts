@@ -1,14 +1,12 @@
 import mongoose from 'mongoose'
 
 const admSchema = new mongoose.Schema({
-  name: {
+   name: {
     type: String,
-    unique: true,
     required: true,
   },
   birthDate: {
     type: Date,
-    unique: true,
     required: true,
   },
   sexualOrientation: {
@@ -17,12 +15,7 @@ const admSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    unique: true,
     required: true,
-  },
-  lastEmail: {
-    type: String,
-    required: false,
   },
   fone: {
     type: String,
@@ -31,9 +24,9 @@ const admSchema = new mongoose.Schema({
   avatar: {
     data: Buffer,
     contentType: String,
-  },
+  },  
   password: {
-    typw: Number,
+    type: String,
     required: true,
   },
   createdAt: {

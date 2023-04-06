@@ -3,7 +3,6 @@ import mongoose from 'mongoose'
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
-    unique: true,
     required: true,
   },
   birthDate: {
@@ -16,12 +15,7 @@ const userSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    unique: true,
     required: true,
-  },
-  lastEmail: {
-    type: String,
-    required: false,
   },
   fone: {
     type: String,
@@ -30,13 +24,12 @@ const userSchema = new mongoose.Schema({
   avatar: {
     data: Buffer,
     contentType: String,
-  },  
+  },
   createdAt: {
     type: Date,
     default: new Date(),
-  }
+  },
 })
-
 
 const User = mongoose.model('Users', userSchema)
 export default User
