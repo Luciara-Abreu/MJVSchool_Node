@@ -1,6 +1,4 @@
-import { getCombinedNodeFlags } from 'typescript'
 import Post from '../models/post.model'
-import User from '../models/user.model'
 import postRepository from '../repository/post.repository'
 import userRepository from '../repository/user.repository'
 
@@ -22,15 +20,17 @@ class PostService {
   }
 
   async create(title: string, content: string, userId: string, newPost: typeof Post) {
-    const postTitle = await postRepository.getByTitle(title)
-    const postContent = await postRepository.getByContent(content)
-    const user = await postRepository.getByUserId(userId)
+    const dataReq = { title, content }
+    const userPost = await postRepository.getUserId(userId)
 
-    if (!postTitle || (!postContent && !user)) {
-      return await postRepository.create(newPost)
-    } else {
+    const Title = dataReq.title
+    const Content = dataReq.content
+
+    const validation = userPost.find(x => x.title === Title || x.content === Content)
+    if (validation) {
       throw new Error('Mensagem já cadastrada para esse usuário')
     }
+    return await postRepository.create(newPost)
   }
 
   async update(id: string, post: Partial<typeof Post>) {
@@ -68,7 +68,3 @@ class PostService {
 }
 
 export default new PostService()
-
-
-
-
