@@ -9,27 +9,9 @@ class PostRepository {
     return Post.findOne({ _id: id })
   }
 
-  getByTitle(title: string) {
-    return Post.findOne({ title: title })
-  }
-  getByContent(content: string) {
-    return Post.findOne({ content: content })
-  }
-
-  //-----------------------------------------
-
   getUserId(_id: string) {
     return Post.find({ userId: _id })
   }
-  //-----------------------------------------
-  getByUserId(_id: string) {
-    return Post.find({
-      where: {
-        userId: _id,
-      },
-    })
-  }
-  //-----------------------------------------
 
   create(post: typeof Post) {
     return Post.create(post)
