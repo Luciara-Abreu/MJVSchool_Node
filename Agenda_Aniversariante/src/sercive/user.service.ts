@@ -26,7 +26,7 @@ class UserService {
     if (!userName && !userEmail && !userBirthDate) {
       return await userRepository.create(newUSer)
     } else {
-      throw new Error('Usuário já cadastrado')
+        throw new Error('Usuário já cadastrado')
     }
   }
 
