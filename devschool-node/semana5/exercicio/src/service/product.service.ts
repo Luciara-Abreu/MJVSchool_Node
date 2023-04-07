@@ -1,58 +1,52 @@
-import ProductsMock from '../bd.Mock/mockProducts'
-import { IproductModel } from '../models/products.model'
+import Product from '../models/product.model'
+import ProductRepository from '../repositories/products.repository'
 
 class ProductService {
   // listar todos
-  getAll() {
-    if (ProductsMock === null) {
-      throw new Error('não existe produtos na lista 👻')
+  async getAll() {
+    const list = await ProductRepository.getAll()
+    if (list.length === 0 || !list.length) {
+      throw new Error('A lista está vazia 👻')
     }
-    return ProductsMock
+    return list
   }
 
   //listar um
-  getById(id: string) {
-    const idProd = ProductsMock.find(prodId => prodId.id === Number(id))
+  async getOne(id: string) {
+    const idProd = await ProductRepository.getById(id)
     if (!idProd) {
       throw new Error('Produto não encontrado 👻')
     }
-    return idProd
+    return ProductRepository.getById(id)
   }
 
   //add Prod
-  create(product: IproductModel) {
-    const idProd = ProductsMock.find(prod => prod.description === product.description)
-    if (idProd) {
-      throw new Error('Produto ja cadastrado')
+  async create(id: string, product: typeof Product) {
+    const idProd = await ProductRepository.getById(id)
+    if (!idProd) {
+      const newProd = ProductRepository.create(product)
+      return newProd
     }
-    const newProd = ProductsMock.push(product)
-    return newProd
+    throw new Error('Produto ja cadastrado')
   }
 
   //atualizar dados
-  update(id: string, produt: Partial<IproductModel>) {
-    const prodIndex = ProductsMock.findIndex(prod => prod.id === Number(id))
-    if (prodIndex === -1) {
+  async update(id: string, produt: Partial<typeof Product>) {
+    const prodIndex = ProductRepository.getById(id)
+    if (!prodIndex) {
       throw new Error('Produto não encontrado 👻')
     }
-
-    const updateData = {
-      ...ProductsMock[prodIndex],
-      ...produt,
-    }
-
-    ProductsMock[prodIndex] = updateData
-    //console.log('prod here ===>', updateData)
-    return { message: 'Produto atualizado com sucesso' }
+    const prod = await ProductRepository.update(id, produt)
+    return prod
   }
 
   // deletar um prod
-  remove(id: string) {
-    const prod = ProductsMock.findIndex(prodId => prodId.id === Number(id))
-    if (prod === -1) {
-      throw new Error('Produto não encontrado')
+  async remove(id: string) {
+    const prodIndex = ProductRepository.getById(id)
+    if (!prodIndex) {
+      throw new Error('Produto não encontrado 👻')
     }
-    ProductsMock.splice(prod, 1)
+    await ProductRepository.remove(id)
   }
 }
 
