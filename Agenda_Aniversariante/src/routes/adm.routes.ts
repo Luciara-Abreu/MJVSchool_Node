@@ -3,7 +3,7 @@ import admService from '../sercive/adm.service'
 
 const admRoute = Router()
 
-console.log('✨ ********** Rotas de Adm **************** ✨')
+console.log('✨ ******* Rotas de Adm ******************* ✨')
 
 //listar todos
 admRoute.get('/ListAll', async (req: Request, res: Response) => {
@@ -28,8 +28,9 @@ admRoute.get('/listOne/:id', async (req: Request, res: Response) => {
 
 //add adm
 admRoute.post('/createAdm', async (req: Request, res: Response) => {
+  const { name, birthDate, sexualOrientation, email, fone, avatar, password }= req.body
   try {
-    await admService.create(req.body.name, req.body.email, req.body.birthDate, req.body)
+    await admService.create({name, birthDate, sexualOrientation, email, fone, avatar, password })
     res.status(200).send({ message: 'Administrador adicionado com sucesso!' })
   } catch (error: any) {
     res.status(400).send({ message: error.message })
