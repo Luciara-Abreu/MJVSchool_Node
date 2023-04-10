@@ -1,5 +1,7 @@
+import { IAdm } from '../interfaces/adm.interface'
 import Adm from '../models/adm.model'
 import admRepository from '../repository/adm.repository'
+import { hash } from 'bcryptjs'
 
 class AdmService {
   async getAll() {
@@ -18,13 +20,24 @@ class AdmService {
     return idAdm
   }
 
-  async create(name: string, email: string, birthDate: string, newAdm: typeof Adm) {
+  async create({name, birthDate, sexualOrientation, email, fone, avatar, password}:IAdm) {
+    const hashedPassword = await hash(password, 8)
+
     const userName = await admRepository.getByName(name)
     const userEmail = await admRepository.getByEmail(email)
-    const userBirthDate = await admRepository.getByBirthDate(birthDate)
+    const userBirthDate = await admRepository.getByBirthDate(String(birthDate))
 
     if (!userName && !userEmail && !userBirthDate) {
-      return await admRepository.create(newAdm)
+  
+      return await admRepository.create({
+        name, 
+        birthDate,
+        sexualOrientation, 
+        email, 
+        fone, 
+        avatar, 
+        password:hashedPassword
+      })
     } else {
       throw new Error('Administrador já cadastrado')
     }
