@@ -23,4 +23,4 @@ const StartServer = () => {
   })
 }
 
-export default StartServer
+export default StartServer()
