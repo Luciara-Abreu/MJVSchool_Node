@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
 const admSchema = new mongoose.Schema({
-   name: {
+  name: {
     type: String,
     required: true,
   },
@@ -22,9 +22,9 @@ const admSchema = new mongoose.Schema({
     required: true,
   },
   avatar: {
-    data: Buffer,
+    type: String,
     contentType: String,
-  },  
+  },
   password: {
     type: String,
     required: true,
@@ -32,7 +32,7 @@ const admSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: new Date(),
-  }
+  },
 })
 
 const Adm = mongoose.model('Adms', admSchema)

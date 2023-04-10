@@ -5,7 +5,7 @@ const userRoute = Router()
 
 console.log('')
 console.log('✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨')
-console.log('✨ ********** Rotas de User *************** ✨')
+console.log('✨ ******* Rotas de User ****************** ✨')
 
 //listar todos
 userRoute.get('/listAll', async (req: Request, res: Response) => {

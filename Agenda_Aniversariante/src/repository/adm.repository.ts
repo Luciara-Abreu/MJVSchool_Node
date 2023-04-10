@@ -1,8 +1,7 @@
+import { IAdm } from "../interfaces/adm.interface"
 import Adm from "../models/adm.model"
 
-
-
-class UserRepository {
+class AdmRepository {
 
 getAll(){
   return Adm.find()
@@ -24,8 +23,19 @@ getByEmail(email:string){
 return Adm.findOne({email: email})
 }
 
-create(adm: typeof Adm){
+/*create(adm: typeof Adm){
   return Adm.create(adm)
+}*/
+create({ name, birthDate, sexualOrientation, email, fone, avatar, password}: IAdm){
+  return Adm.create({ 
+    name, 
+    birthDate,
+    sexualOrientation,
+    email,
+    fone,
+    avatar,
+    password        
+  })
 }
 
 update(id:string, adm: Partial<typeof Adm>){
@@ -38,4 +48,4 @@ remove(id:string){
 
 }
 
-export default new UserRepository()
+export default new AdmRepository()

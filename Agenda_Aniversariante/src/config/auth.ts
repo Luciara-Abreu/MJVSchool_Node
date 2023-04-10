@@ -1,7 +1,5 @@
 import * as dotenv from 'dotenv'
-
-const secretMD5 = process.env.MD5_HASH
-console.log('secret here ===> ',secretMD5)
+//const secretMD5 = process.env.APP_SECRET_KEY
 
 export default {
   jwt: {
@@ -9,3 +7,4 @@ export default {
     expiresIn: '1d',
   },
 }
+

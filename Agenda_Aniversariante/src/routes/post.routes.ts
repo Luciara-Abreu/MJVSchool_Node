@@ -3,8 +3,8 @@ import postService from '../sercive/post.service'
 
 const postRoute = Router()
 
-console.log('✨ ********** Rotas de Post *************** ✨')
-console.log('✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨')
+console.log('✨ ******* Rotas de Post ****************** ✨')
+
 
 //listar todos
 postRoute.get('/listAll', async (req: Request, res: Response) => {
