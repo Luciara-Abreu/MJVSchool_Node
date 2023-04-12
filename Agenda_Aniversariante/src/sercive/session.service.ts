@@ -4,6 +4,8 @@ import admRepository from '../repository/adm.repository'
 import jwt from 'jsonwebtoken'
 import authConfig from '@config/auth'
 import { IAuthType } from 'src/interfaces/adm.interface'
+import tokenRepository from 'src/repository/token.repository'
+
 
 class SessionAuthService {
   async execute({email, password}: IAuthType) {
@@ -19,12 +21,13 @@ class SessionAuthService {
     const token = jwt.sign({ id: adm.id?.toString(), name: adm.name }, authConfig.jwt.secret, {
       expiresIn: authConfig.jwt.expiresIn,
     })
-
-    return {
+  
+   return {
       adm,
       token
     }
   }
+
 }
 
 export default new SessionAuthService()

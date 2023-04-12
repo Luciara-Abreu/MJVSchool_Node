@@ -1,5 +1,6 @@
 import { Request, Response, Router } from 'express'
 import userService from '../sercive/user.service'
+import isAuthenticated from 'src/middlewares/is.authenticated'
 
 const userRoute = Router()
 
@@ -29,9 +30,9 @@ userRoute.get('/listOne/:id', async (req: Request, res: Response) => {
 })
 
 //add user
-userRoute.post('/createUser', async (req: Request, res: Response) => {
+userRoute.post('/createUser', isAuthenticated, async (req: Request, res: Response) => {
   try {
-    await userService.create(req.body.name,req.body.email,req.body.birthDate, req.body)
+    await userService.create(req.body.name, req.body.email, req.body.birthDate, req.body)
     res.status(200).send({ message: 'Usuário adicionado com sucesso!' })
   } catch (error: any) {
     res.status(400).send({ message: error.message })
@@ -39,7 +40,7 @@ userRoute.post('/createUser', async (req: Request, res: Response) => {
 })
 
 //atualizar
-userRoute.patch('/update/:id', async (req: Request, res: Response) => {
+userRoute.patch('/update/:id', isAuthenticated, async (req: Request, res: Response) => {
   const id = req.params.id
   try {
     await userService.update(id, req.body)
@@ -50,7 +51,7 @@ userRoute.patch('/update/:id', async (req: Request, res: Response) => {
 })
 
 //deletar
-userRoute.delete('/remove/:id', async (req: Request, res: Response) => {
+userRoute.delete('/remove/:id', isAuthenticated, async (req: Request, res: Response) => {
   const id = req.params.id
   try {
     await userService.remove(id)

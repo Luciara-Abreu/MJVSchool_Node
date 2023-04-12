@@ -36,6 +36,6 @@ startar o mongod
 https://acervolima.com/carregar-e-recuperar-imagens-no-mongodb-usando-mongoose/
 
 
-luci
+
 
 

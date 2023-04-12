@@ -57,7 +57,7 @@ class PostService {
     }
     const userPost = await postRepository.getUserId(id)
     if (!userPost) {
-      throw new Error('Mensagem não encontrada 👻')
+      throw new Error('Nenhuma menagem encontrada para esse usuário 👻')
     }
     const showList = {
       idUser,
@@ -66,5 +66,13 @@ class PostService {
     return showList
   }
 }
+
+/* formantação de data => https://momentjs.com/docs/
+lib Moment == https://www.npmjs.com/package/moment
+Nathan Carlos Santos Lima18:12
+moment().utc().subtract(3, 'hour')
+const getDateToday = () => moment().utc().subtract(3, 'hour');
+getDateToday.toDate()
+*/
 
 export default new PostService()

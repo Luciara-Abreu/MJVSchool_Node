@@ -1,5 +1,6 @@
 import { Request, Response, Router } from 'express'
 import postService from '../sercive/post.service'
+import isAuthenticated from 'src/middlewares/is.authenticated'
 
 const postRoute = Router()
 
@@ -28,7 +29,7 @@ postRoute.get('/listOne/:id', async (req: Request, res: Response) => {
 })
 
 //Adicionar post
-postRoute.post('/createPost', async (req: Request, res: Response) => {
+postRoute.post('/createPost', isAuthenticated, async (req: Request, res: Response) => {
   try {
     await postService.create(req.body.title, req.body.content, req.body.userId, req.body)
     res.status(200).send({ message: 'Mensagem adicionado com sucesso!' })
@@ -38,7 +39,7 @@ postRoute.post('/createPost', async (req: Request, res: Response) => {
 })
 
 //atualizar
-postRoute.patch('/update/:id', async (req: Request, res: Response) => {
+postRoute.patch('/update/:id', isAuthenticated, async (req: Request, res: Response) => {
   const id = req.params.id
   try {
     await postService.update(id, req.body)
@@ -49,7 +50,7 @@ postRoute.patch('/update/:id', async (req: Request, res: Response) => {
 })
 
 //deletar
-postRoute.delete('/remove/:id', async (req: Request, res: Response) => {
+postRoute.delete('/remove/:id', isAuthenticated, async (req: Request, res: Response) => {
   try {
     await postService.remove(req.params.id)
     res.status(200).send({ message: 'Mensagem removida com sucesso!' })

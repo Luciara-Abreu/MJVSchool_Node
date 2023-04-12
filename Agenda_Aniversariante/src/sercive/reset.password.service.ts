@@ -1,16 +1,16 @@
 import { isAfter, addHours} from 'date-fns'
 import admRepository from '../repository/adm.repository'
-import admTokenRepository from '../repository/admToken.repository'
 import { hash } from 'bcryptjs'
+import Adm from 'src/models/adm.model'
+import tokenRepository from 'src/repository/token.repository'
 
 interface IRequest {
   token: string
   password: string
 }
-
 class ResetPasswordService {
   async create({token, password}:IRequest) {
-    const admToken = await admTokenRepository.getFindByToken(token)
+    const admToken = await tokenRepository.getFindByToken(token)
     if (!admToken) {
       throw new Error('Adm Token encontrado 👻')
     }
@@ -27,6 +27,7 @@ class ResetPasswordService {
   }
 
   adm.password = await hash(password, 8)
+  //await admRepository.update(id, adm)
 
   }
 }
