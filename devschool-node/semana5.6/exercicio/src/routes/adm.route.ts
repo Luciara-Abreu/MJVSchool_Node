@@ -56,4 +56,13 @@ AdmRouter.delete('/:id', async (req: Request, res: Response) => {
   }
 })
 
+AdmRouter.post('/authorization', async (req: Request, res: Response) => {
+  try {
+    const token = await admService.authorization(req.body.email, req.body.password)
+    res.status(200).send({ token })
+  } catch (error: any) {
+    res.status(401).send({ message: error.message })
+  }
+})
+
 export default AdmRouter
