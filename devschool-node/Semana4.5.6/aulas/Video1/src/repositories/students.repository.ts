@@ -9,6 +9,7 @@ class StudentRepository {
   getByDocument(document: string) {
     return Student.findOne({ document: document })
   }
+  
   getByEmail(email: string) {
     return Student.findOne({ email })
   }
