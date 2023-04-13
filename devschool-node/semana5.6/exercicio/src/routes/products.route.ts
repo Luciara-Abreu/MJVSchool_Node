@@ -1,10 +1,11 @@
 import { Request, Response, Router } from 'express'
 import ProductService from '../service/product.service'
+import { authorizationMiddleware } from '../middleware/authorization.middleware'
 
 const ProductsRouter = Router()
 
 //listar todos
-ProductsRouter.get('/', async (req: Request, res: Response) => {
+ProductsRouter.get('/', authorizationMiddleware, async (req: Request, res: Response) => {
   try {
     const listProducts = await ProductService.getAll()
     res.status(200).send(listProducts)
@@ -14,7 +15,7 @@ ProductsRouter.get('/', async (req: Request, res: Response) => {
 })
 
 //listar um
-ProductsRouter.get('/listOne/:id', async (req: Request, res: Response) => {
+ProductsRouter.get('/listOne/:id', authorizationMiddleware, async (req: Request, res: Response) => {
   const id = req.params.id
   try {
     const prod = await ProductService.getOne(id)
@@ -25,8 +26,8 @@ ProductsRouter.get('/listOne/:id', async (req: Request, res: Response) => {
 })
 
 //add Produto
-ProductsRouter.post('/', async (req: Request, res: Response) => {
-   const id = req.params.id
+ProductsRouter.post('/', authorizationMiddleware, async (req: Request, res: Response) => {
+  const id = req.params.id
   try {
     await ProductService.create(id, req.body)
     res.status(200).send({ message: 'Produto add com sucesso!' })
@@ -36,7 +37,7 @@ ProductsRouter.post('/', async (req: Request, res: Response) => {
 })
 
 //atualizar
-ProductsRouter.patch('/update/:id', async (req: Request, res: Response) => {
+ProductsRouter.patch('/update/:id', authorizationMiddleware, async (req: Request, res: Response) => {
   const id = req.params.id
   try {
     await ProductService.update(id, req.body)
@@ -47,7 +48,7 @@ ProductsRouter.patch('/update/:id', async (req: Request, res: Response) => {
 })
 
 //deletar
-ProductsRouter.delete('/remove/:id', async (req: Request, res: Response) => {
+ProductsRouter.delete('/remove/:id', authorizationMiddleware, async (req: Request, res: Response) => {
   try {
     await ProductService.remove(req.params.id)
     res.status(200).send({ message: 'Produto deletado com sucesso!' })
