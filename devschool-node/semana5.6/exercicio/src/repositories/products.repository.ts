@@ -6,8 +6,12 @@ class ProductRepository {
     return Product.find()
   }
 
-  getById(id: string) {
-    return Product.findOne({ _id: id })
+  getById(_id: string) {
+    return Product.findOne({ _id: _id })
+  }
+  
+  getByDescription(description: string) {
+    return Product.findOne({ description: description })
   }
 
   create(product: IProd) {
