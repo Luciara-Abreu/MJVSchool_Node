@@ -11,7 +11,7 @@ class AdmRepository {
   }
 
   getByEmail(email: string) {
-    return Adm.findOne({ email })
+    return Adm.findOne({ email: email })
   }
 
   create(adm: IAdm) {
