@@ -1,3 +1,4 @@
+import { isValidObjectId } from 'mongoose'
 import IProd from '../interface/product.interface'
 import ProductRepository from '../repositories/products.repository'
 
@@ -13,6 +14,7 @@ class ProductService {
 
   //listar um
   async getOne(id: string) {
+    this.getByIdValid(id)
     const idProd = await ProductRepository.getById(id)
     if (!idProd) {
       throw new Error('Produto não encontrado 👻')
@@ -21,10 +23,10 @@ class ProductService {
   }
 
   //add Prod
-  async create(id: string, product: IProd) {
-    const idProd = await ProductRepository.getById(id)
+  async create(description: string, product: IProd) {
+    const idProd = await ProductRepository.getByDescription(description)
     if (!idProd) {
-      const newProd = ProductRepository.create(product)
+      const newProd = await ProductRepository.create(product)
       return newProd
     }
     throw new Error('Produto ja cadastrado')
@@ -32,6 +34,7 @@ class ProductService {
 
   //atualizar dados
   async update(id: string, produt: Partial<IProd>) {
+    this.getByIdValid(id)
     const prodIndex = ProductRepository.getById(id)
     if (!prodIndex) {
       throw new Error('Produto não encontrado 👻')
@@ -42,11 +45,17 @@ class ProductService {
 
   // deletar um prod
   async remove(id: string) {
-    const prodIndex = ProductRepository.getById(id)
-    if (!prodIndex) {
+    this.getByIdValid(id)
+    const idProd = await ProductRepository.getById(id)
+    if (!idProd) {
       throw new Error('Produto não encontrado 👻')
     }
-    await ProductRepository.remove(id)
+    return await ProductRepository.remove(id)
+  }
+
+  //validar Id
+  public getByIdValid(_id: string) {
+    if (!isValidObjectId(_id)) throw new Error('Id invalido 👎🏻')
   }
 }
 
