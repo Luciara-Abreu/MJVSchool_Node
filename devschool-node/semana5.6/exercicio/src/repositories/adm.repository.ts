@@ -22,8 +22,8 @@ class AdmRepository {
     return Adm.create(adm)
   }
 
-  update(id: string, adm: Partial<IAdm>) {
-    return Adm.updateOne({ id, $set: adm })
+  update(_id: string, adm: Partial<IAdm>) {
+    return Adm.updateOne({_id: _id },{$set: adm })
   }
 
   remove(_id: string) {

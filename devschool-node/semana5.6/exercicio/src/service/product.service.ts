@@ -26,7 +26,7 @@ class ProductService {
   async create(description: string, img: string, product: IProd) {
     const idProd = await ProductRepository.getByDescription(description)
     const idImg = await ProductRepository.getByImg(img)
-    
+
     if (!idProd && !idImg) {
       const newProd = await ProductRepository.create(product)
       return newProd
@@ -37,7 +37,8 @@ class ProductService {
   //atualizar dados
   async update(id: string, produt: Partial<IProd>) {
     this.getByIdValid(id)
-    const prodIndex = ProductRepository.getById(id)
+
+    const prodIndex = await ProductRepository.getById(id)
     if (!prodIndex) {
       throw new Error('Produto não encontrado 👻')
     }

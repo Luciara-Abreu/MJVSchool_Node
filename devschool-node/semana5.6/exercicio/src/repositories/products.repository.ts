@@ -22,8 +22,8 @@ class ProductRepository {
     return Product.create(product)
   }
 
-  update(id: string, product: Partial<IProd>) {
-    return Product.updateOne({ _id: id, $set: product })
+ update(_id: string, product: Partial<IProd>) {
+    return Product.updateOne({_id: _id },{ $set: product })
   }
 
   remove(id: string) {

@@ -38,7 +38,7 @@ AdmRouter.post('/', async (req: Request, res: Response) => {
 AdmRouter.patch('/update/:id', async (req: Request, res: Response) => {
   const id = req.params.id
   try {
-    await admService.update(id, req.body)
+    await admService.update(id, req.body.email, req.body)
     res.status(200).send({ message: 'Administrador atualizado com sucesso' })
   } catch (error: any) {
     res.status(400).send({ message: error.message })

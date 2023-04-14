@@ -48,11 +48,16 @@ class AdmService {
   }
 
   //atualizar dados
-  async update(id: string, adm: Partial<IAdm>) {
+  async update(id: string, email: string, adm: Partial<IAdm>) {
     this.getByIdValid(id)
     const idExist = await admRepository.getById(id)
     if (!idExist) {
       throw new Error('Administrador não encontrado 👻')
+    }
+    const thisEmail = await admRepository.getByEmail(email)
+
+    if (thisEmail?.email === String(adm.email)) {
+      throw new Error('Email invalido')
     }
     if (adm.password) {
       adm.password = await bcrypt.hash(adm.password, 10)
