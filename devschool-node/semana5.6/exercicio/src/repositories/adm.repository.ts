@@ -9,10 +9,14 @@ class AdmRepository {
   getById(_id: string) {
     return Adm.findOne({ _id: _id })
   }
-
+    
   getByEmail(email: string) {
     return Adm.findOne({ email: email })
   }
+  getByName(name: string) {
+    return Adm.findOne({ name: name })
+  }
+
 
   create(adm: IAdm) {
     return Adm.create(adm)

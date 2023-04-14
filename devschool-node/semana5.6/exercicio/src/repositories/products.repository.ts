@@ -13,6 +13,10 @@ class ProductRepository {
   getByDescription(description: string) {
     return Product.findOne({ description: description })
   }
+  
+  getByImg(img: string) {
+    return Product.findOne({ img: img })
+  }
 
   create(product: IProd) {
     return Product.create(product)
