@@ -1,7 +1,7 @@
 import * as dotenv from 'dotenv'
 import express from 'express'
 import cors from 'cors'
-import route from './routes'
+import route from './routers'
 import conectionDb from './config/database'
 
 const StartServer = () => {

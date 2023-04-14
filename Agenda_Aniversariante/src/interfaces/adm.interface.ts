@@ -1,14 +1,10 @@
 import Adm from "../models/adm.model"
+import { IUser } from "./user.interface"
 
-export interface IAdm {
-  name: string, 
-  birthDate: Date, 
-  sexualOrientation: string
-  email: string, 
-  fone: string
-  avatar: string
+export interface IAdm extends IUser{
   password: string
 }
+
 
 export interface IAuthType {
   email: string
