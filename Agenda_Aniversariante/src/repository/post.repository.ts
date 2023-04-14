@@ -1,3 +1,4 @@
+import { IPost } from '../interfaces/post.interface'
 import Post from '../models/post.model'
 
 class PostRepository {
@@ -5,20 +6,20 @@ class PostRepository {
     return Post.find()
   }
 
-  getById(id: string) {
-    return Post.findOne({ _id: id })
+  getById(_id: string) {
+    return Post.findOne({ _id: _id })
   }
 
   getUserId(_id: string) {
     return Post.find({ userId: _id })
   }
 
-  create(post: typeof Post) {
+  create(post: IPost) {
     return Post.create(post)
   }
 
-  update(id: string, post: Partial<typeof Post>) {
-    return Post.updateOne({ _id: id }, { $set: post })
+  update(_id: string, post: Partial<IPost>) {
+    return Post.updateOne({ _id: _id }, { $set: post })
   }
 
   remove(id: string) {
