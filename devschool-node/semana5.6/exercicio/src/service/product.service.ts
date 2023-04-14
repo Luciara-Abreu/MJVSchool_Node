@@ -23,9 +23,11 @@ class ProductService {
   }
 
   //add Prod
-  async create(description: string, product: IProd) {
+  async create(description: string, img: string, product: IProd) {
     const idProd = await ProductRepository.getByDescription(description)
-    if (!idProd) {
+    const idImg = await ProductRepository.getByImg(img)
+    
+    if (!idProd && !idImg) {
       const newProd = await ProductRepository.create(product)
       return newProd
     }

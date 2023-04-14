@@ -10,15 +10,22 @@ const secretJWT = process.env.JWT_SECRET_KEY || ''
 
 class AdmService {
   //add
-  async create(id: string, adm: IAdm) {
+  async create(name: string, email: string, adm: IAdm) {
+    const thisName = await admRepository.getByName(name)
+    const thisEmail = await admRepository.getByEmail(email)
+
+    if (thisName?.name === String(adm.name)) {
+      throw new Error('Nome invalido')
+    }
+
+    if (thisEmail?.email === String(adm.email)) {
+      throw new Error('Email invalido')
+    }
+
     if (adm.password) {
       adm.password = await bcrypt.hash(adm.password, 10)
     }
-    const admId = await admRepository.getById(id)
-    if (!admId) {
-      return admRepository.create(adm)
-    }
-    throw new Error('Administrador já cadastrado')
+    return admRepository.create(adm)
   }
 
   // listar todos

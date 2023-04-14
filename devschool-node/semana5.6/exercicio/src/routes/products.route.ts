@@ -28,7 +28,7 @@ ProductsRouter.get('/listOne/:id', authorizationMiddleware, async (req: Request,
 //add Produto
 ProductsRouter.post('/', authorizationMiddleware, async (req: Request, res: Response) => {
   try {
-    await ProductService.create(req.body.description, req.body)
+    await ProductService.create(req.body.description, req.body.img, req.body)
     res.status(200).send({ message: 'Produto add com sucesso!' })
   } catch (error: any) {
     res.status(400).send({ message: error.message })
