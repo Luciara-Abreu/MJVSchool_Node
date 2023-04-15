@@ -1,7 +1,6 @@
 import { Request, Response, Router } from 'express'
 import userService from '../sercive/user.service'
 
-
 const userRoute = Router()
 
 console.log('')
@@ -32,7 +31,7 @@ userRoute.get('/listOne/:id', async (req: Request, res: Response) => {
 //add user
 userRoute.post('/createUser', async (req: Request, res: Response) => {
   try {
-    await userService.create(req.body.name, req.body.email, req.body.birthDate, req.body)
+    await userService.create(req.body.name, req.body.email, req.body)
     res.status(200).send({ message: 'Usuário adicionado com sucesso!' })
   } catch (error: any) {
     res.status(400).send({ message: error.message })

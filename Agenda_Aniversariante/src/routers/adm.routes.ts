@@ -28,9 +28,8 @@ admRoute.get('/listOne/:id', async (req: Request, res: Response) => {
 
 //add adm
 admRoute.post('/createAdm', async (req: Request, res: Response) => {
-  const { name, birthDate, sexualOrientation, email, fone, avatar, password }= req.body
   try {
-    await admService.create({name, birthDate, sexualOrientation, email, fone, avatar, password })
+    await admService.create(req.body.name,  req.body.email, req.body)
     res.status(200).send({ message: 'Administrador adicionado com sucesso!' })
   } catch (error: any) {
     res.status(400).send({ message: error.message })
@@ -39,9 +38,8 @@ admRoute.post('/createAdm', async (req: Request, res: Response) => {
 
 //atualizar
 admRoute.patch('/update/:id', async (req: Request, res: Response) => {
-  const id = req.params.id
   try {
-    await admService.update(id, req.body)
+    await admService.update(req.params.id, req.body.name, req.body.email, req.body)
     res.status(200).send({ message: 'Administrador atualizado com sucesso' })
   } catch (error: any) {
     res.status(400).send({ message: error.message })
