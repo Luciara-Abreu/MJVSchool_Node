@@ -9,6 +9,25 @@ dotenv.config()
 const secretJWT = process.env.JWT_SECRET_KEY || ''
 
 class AdmService {
+  // listar todos
+  async getAll() {
+    const list = await admRepository.getAll()
+    if (list.length === 0 || !list.length) {
+      throw new Error('A lista está vazia 👻')
+    }
+    return list
+  }
+
+  //listar um
+  async getOne(id: string) {
+    this.getByIdValid(id)
+    const idExist = await admRepository.getById(id)
+    if (!idExist) {
+      throw new Error('Administrador não encontrado 👻')
+    }
+    return admRepository.getById(id)
+  }
+
   //add
   async create(name: string, email: string, adm: IAdm) {
     const thisName = await admRepository.getByName(name)
@@ -28,24 +47,7 @@ class AdmService {
     return admRepository.create(adm)
   }
 
-  // listar todos
-  async getAll() {
-    const list = await admRepository.getAll()
-    if (list.length === 0 || !list.length) {
-      throw new Error('A lista está vazia 👻')
-    }
-    return list
-  }
 
-  //listar um
-  async getOne(id: string) {
-    this.getByIdValid(id)
-    const idExist = await admRepository.getById(id)
-    if (!idExist) {
-      throw new Error('Administrador não encontrado 👻')
-    }
-    return admRepository.getById(id)
-  }
 
   //atualizar dados
   async update(id: string, email: string, adm: Partial<IAdm>) {

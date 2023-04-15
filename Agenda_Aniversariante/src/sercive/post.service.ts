@@ -1,6 +1,8 @@
+import { IPost } from 'src/interfaces/post.interface'
 import Post from '../models/post.model'
 import postRepository from '../repository/post.repository'
 import userRepository from '../repository/user.repository'
+import { isValidObjectId } from 'mongoose'
 
 class PostService {
   async getAll() {
@@ -12,6 +14,7 @@ class PostService {
   }
 
   async getOne(id: string) {
+    this.getByIdValid(id)
     const idPost = await postRepository.getById(id)
     if (!idPost) {
       throw new Error('Mensagem não encontrada 👻')
@@ -19,7 +22,7 @@ class PostService {
     return idPost
   }
 
-  async create(title: string, content: string, userId: string, newPost: typeof Post) {
+  async create(title: string, content: string, userId: string, newPost: IPost) {
     const dataReq = { title, content }
     const userPost = await postRepository.getUserId(userId)
 
@@ -33,7 +36,8 @@ class PostService {
     return await postRepository.create(newPost)
   }
 
-  async update(id: string, post: Partial<typeof Post>) {
+  async update(id: string, post: Partial<IPost>) {
+    this.getByIdValid(id)
     const idPost = await postRepository.getById(id)
     if (!idPost) {
       throw new Error('Mensagem não encontrada 👻')
@@ -43,6 +47,7 @@ class PostService {
   }
 
   async remove(id: string) {
+    this.getByIdValid(id)
     const idPost = await postRepository.getById(id)
     if (!idPost) {
       throw new Error('Mensagem não encontrada 👻')
@@ -51,6 +56,7 @@ class PostService {
   }
 
   async listPostForUSer(id: string, userId: string) {
+    this.getByIdValid(id)
     const idUser = await userRepository.getById(id)
     if (!idUser) {
       throw new Error('Usuário não encontrado 👻')
@@ -65,14 +71,11 @@ class PostService {
     }
     return showList
   }
-}
 
-/* formantação de data => https://momentjs.com/docs/
-lib Moment == https://www.npmjs.com/package/moment
-Nathan Carlos Santos Lima18:12
-moment().utc().subtract(3, 'hour')
-const getDateToday = () => moment().utc().subtract(3, 'hour');
-getDateToday.toDate()
-*/
+    //validar Id
+    public getByIdValid(_id: string) {
+      if (!isValidObjectId(_id)) throw new Error('Id invalido 👎🏻')
+    }
+}
 
 export default new PostService()

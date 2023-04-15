@@ -1,7 +1,12 @@
+import { isValidObjectId } from 'mongoose'
 import { IAdm } from '../interfaces/adm.interface'
-import Adm from '../models/adm.model'
 import admRepository from '../repository/adm.repository'
-import { hash } from 'bcryptjs'
+import bcrypt from 'bcrypt'
+import dotenv from 'dotenv'
+import jwt from 'jsonwebtoken'
+
+dotenv.config()
+const secretJWT = process.env.JWT_SECRET_KEY || ''
 
 class AdmService {
   async getAll() {
@@ -13,6 +18,7 @@ class AdmService {
   }
 
   async getOne(id: string) {
+    this.getByIdValid(id)
     const idAdm = await admRepository.getById(id)
     if (!idAdm) {
       throw new Error('Administrador não encontrado 👻')
@@ -20,44 +26,60 @@ class AdmService {
     return idAdm
   }
 
-  async create({name, birthDate, sexualOrientation, email, fone, avatar, password}:IAdm) {
-    const hashedPassword = await hash(password, 8)
+  async create(name: string, email: string, adm: IAdm) {
+    const thisName = await admRepository.getByName(name)
+    const thisEmail = await admRepository.getByEmail(email)
 
-    const userName = await admRepository.getByName(name)
-    const userEmail = await admRepository.getByEmail(email)
-    const userBirthDate = await admRepository.getByBirthDate(String(birthDate))
-
-    if (!userName && !userEmail && !userBirthDate) {
-  
-      return await admRepository.create({
-        name, 
-        birthDate,
-        sexualOrientation, 
-        email, 
-        fone, 
-        avatar, 
-        password:hashedPassword
-      })
-    } else {
-      throw new Error('Administrador já cadastrado')
+    if (thisName?.name === String(adm.name)) {
+      throw new Error('Nome invalido')
     }
+
+    if (thisEmail?.email === String(adm.email)) {
+      throw new Error('Email invalido')
+    }
+
+    if (adm.password) {
+      adm.password = await bcrypt.hash(adm.password, 10)
+    }
+    return admRepository.create(adm)
   }
 
-  async update(id: string, adm: Partial<typeof Adm>) {
-    const idAdm = await admRepository.getById(id)
-    if (!idAdm) {
+  async update(id: string, name: string, email: string, adm: Partial<IAdm>) {
+    this.getByIdValid(id)
+    const idExist = await admRepository.getById(id)
+    const thisName = await admRepository.getByName(name)
+    const thisEmail = await admRepository.getByEmail(email)
+
+    if (!idExist) {
       throw new Error('Administrador não encontrado 👻')
     }
-    const admUpdate = admRepository.update(id, adm)
-    return admUpdate
+    if (thisName?.name === String(adm.name)) {
+      throw new Error('Nome invalido')
+    }
+    if (thisEmail?.email === String(adm.email)) {
+      throw new Error('Email invalido')
+    }
+    if (adm.password) {
+      adm.password = await bcrypt.hash(adm.password, 10)
+    }
+    const newAdm = await admRepository.update(id, adm)
+    return newAdm
   }
 
   async remove(id: string) {
+    this.getByIdValid(id)
     const idAdm = await admRepository.getById(id)
     if (!idAdm) {
       throw new Error('Usuário não encontrado 👻')
     }
     await admRepository.remove(id)
   }
+
+  //validar Id
+  public getByIdValid(_id: string) {
+    if (!isValidObjectId(_id)) throw new Error('Id invalido 👎🏻')
+  }
 }
 export default new AdmService()
+
+
