@@ -64,10 +64,12 @@ Vou aproveitar o front-end para consumir minhas apis :D
 <img src='https://user-images.githubusercontent.com/36546342/232256013-b4721708-4c0f-4316-9c0b-05b22be6b792.JPG'/>
 </div>
 
-Minha segunda tentativa foi com o Mysql e fui desenvolver a api com videos e tutoriais.... Criei todo o crud, aprendi a usar o sequelise e salvar tudo certinho no banco, mas li que o postgres era top então fiqui curiosa e desenvolvi outra Api rest básica para aprender mais e ai usei o typeorm e lá conheci o repository, ameiiii.
-Eatava começando a aprender a consumir minha Api com o postgres quando conheci o curso MJVSchool_Node e resolvi aprender com voces nesse curso magnifico de como criar uma API com MongoDB e quem sabe conquistar a confiança de vocês para uma futura vaga de jr.sobre o curso, Simplismente amei!
+Minha segunda tentativa foi com o Mysql e fui desenvolver a api com videos e tutoriais.... Criei todo o crud, aprendi a usar o sequelise e salvar tudo certinho no banco, mas li que o postgres era top então fiquei curiosa e desenvolvi outra Api rest básica para aprender mais e ai usei o typeorm e lá conheci o repository, ameiiii.
+Estava começando a aprender a consumir minha Api com o postgres quando conheci o curso MJVSchool_Node e resolvi aprender com voces, nesse curso magnifico, de como criar uma API com MongoDB e quem sabe conquistar a confiança de vocês para uma futura vaga de jr.
+Sobre o curso, Simplismente amei! é top de linha!! 
+
 Meu contato com node é recente, mas confesso estar apaixonada e cada vez mais as coisas ficam mais claras e faceis. Acho que isso se deve a minhas inumeras tentativas de fazer acontecer e não desistir.
-Obrigada a todos os envolvidos.
+Obrigada a todos os envolvidos, Só tenho a agradecer!! 
 
 <div alin="center">
 <img src='https://user-images.githubusercontent.com/36546342/232255585-ceb4f1ac-79ba-4e70-9a8c-7421e4236201.JPG'/>
