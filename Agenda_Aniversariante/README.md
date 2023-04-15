@@ -6,7 +6,7 @@ Em resuumo, o usuário administrador terá que estar autenticado na aplicação 
 
 ---
 
-- De onde surgio o projeto?
+- De onde surgiu a ideia para esse projeto?
 
 ---
 
@@ -34,6 +34,12 @@ Algumas formulas e filtros para atingir os resultados no Excel.
 
 <div alin="center">
 <img src='https://user-images.githubusercontent.com/36546342/232256492-0fb82f91-cb56-426f-9b02-5ffbbcc635c6.JPG'/>
+</div>
+<div alin="center">
+<img src='https://user-images.githubusercontent.com/36546342/232256641-9c9f2248-c71c-482e-9ac7-c8586a838224.JPG'/>
+</div>
+<div alin="center">
+<img src='https://user-images.githubusercontent.com/36546342/232256651-bdb305fc-6af7-424b-beba-ace70cb063e2.JPG'/>
 </div>
 
 ---
