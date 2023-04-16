@@ -1,6 +1,7 @@
 import mongoose from 'mongoose'
+import { IUser } from 'src/interfaces/user.interface'
 
-const userSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema<IUser>({
   
   name: {
     type: String,
@@ -30,7 +31,11 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: new Date(),
   },
+  updatedAt: {
+    type: Date,
+    default: new Date(),
+  },
 })
 
-const User = mongoose.model('Users', userSchema)
+const User = mongoose.model<IUser>('Users', userSchema)
 export default User

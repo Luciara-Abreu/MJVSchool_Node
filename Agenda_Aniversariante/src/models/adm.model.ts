@@ -1,6 +1,7 @@
 import mongoose from 'mongoose'
+import { IAdm } from 'src/interfaces/adm.interface'
 
-const admSchema = new mongoose.Schema({
+const admSchema = new mongoose.Schema<IAdm>({
   name: {
     type: String,
     required: true,
@@ -33,7 +34,11 @@ const admSchema = new mongoose.Schema({
     type: Date,
     default: new Date(),
   },
+  updatedAt: {
+    type: Date,
+    default: new Date(),
+  },
 })
 
-const Adm = mongoose.model('Adms', admSchema)
+const Adm = mongoose.model<IAdm>('Adms', admSchema)
 export default Adm

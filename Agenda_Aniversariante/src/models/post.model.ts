@@ -1,6 +1,7 @@
-import mongoose, { Schema } from 'mongoose'
+import mongoose from 'mongoose'
+import { IPost } from 'src/interfaces/post.interface'
 
-const postSchema = new mongoose.Schema({
+const postSchema = new mongoose.Schema<IPost>({
   title: {
     type: String,
     required: true,
@@ -10,7 +11,6 @@ const postSchema = new mongoose.Schema({
     required: true,
   },
   userId: {
-    //  type: Schema.Types.ObjectId,
     type: String,
     required: true,
   },
@@ -18,7 +18,12 @@ const postSchema = new mongoose.Schema({
     type: Date,
     default: new Date(),
   },
+  updatedAt: {
+    type: Date,
+    default: new Date(),
+  }
 })
 
-const Post = mongoose.model('Posts', postSchema)
+
+const Post = mongoose.model<IPost>('Posts', postSchema)
 export default Post

@@ -6,4 +6,6 @@ export interface IUser {
   email: string, 
   fone: string
   avatar: string
+  createdAt: Date
+  updatedAt: Date
 }

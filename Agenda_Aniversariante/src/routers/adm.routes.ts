@@ -58,7 +58,7 @@ admRoute.delete('/remove/:id', authorizationMiddleware, async (req: Request, res
 })
 
 //Logar
-admRoute.post('/authorization', authorizationMiddleware, async (req: Request, res: Response) => {
+admRoute.post('/authorization', async (req: Request, res: Response) => {
   try {
     const token = await admService.authorization(req.body.email, req.body.password)
     res.status(200).send({ token })

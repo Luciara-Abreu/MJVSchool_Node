@@ -4,6 +4,7 @@ import admRepository from '../repository/adm.repository'
 import bcrypt from 'bcrypt'
 import dotenv from 'dotenv'
 import jwt from 'jsonwebtoken'
+import tokenRepository from 'src/repository/token.repository'
 
 dotenv.config()
 const secretJWT = process.env.JWT_SECRET_KEY || ''
@@ -88,9 +89,13 @@ class AdmService {
     }
     const result = await bcrypt.compare(password, admId.password)
     if (result) {
-      return jwt.sign({ email: admId.email, id: admId.id }, secretJWT, {
-        expiresIn: '1d',
+      const token = jwt.sign({ email: admId.email, id: admId.id }, secretJWT, {
+        expiresIn: '1h',
       })
+      if (token) {
+        await tokenRepository.Salve({ token, admId: admId.id })
+      }
+      return token
     }
     throw new Error('Falha na autenticação!')
   }
