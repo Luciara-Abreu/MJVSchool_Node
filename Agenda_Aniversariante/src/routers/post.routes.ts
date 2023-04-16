@@ -1,13 +1,13 @@
 import { Request, Response, Router } from 'express'
 import postService from '../sercive/post.service'
+import { authorizationMiddleware } from 'src/middlewares/authorization.middleware'
 
 const postRoute = Router()
 
 console.log('✨ ******* Rotas de Post ****************** ✨')
 
-
 //listar todos
-postRoute.get('/listAll', async (req: Request, res: Response) => {
+postRoute.get('/listAll', authorizationMiddleware, async (req: Request, res: Response) => {
   try {
     const listPost = await postService.getAll()
     res.status(200).send(listPost)
@@ -17,7 +17,7 @@ postRoute.get('/listAll', async (req: Request, res: Response) => {
 })
 
 //listar um
-postRoute.get('/listOne/:id', async (req: Request, res: Response) => {
+postRoute.get('/listOne/:id', authorizationMiddleware, async (req: Request, res: Response) => {
   const id = req.params.id
   try {
     const post = await postService.getOne(id)
@@ -28,7 +28,7 @@ postRoute.get('/listOne/:id', async (req: Request, res: Response) => {
 })
 
 //Adicionar post
-postRoute.post('/createPost', async (req: Request, res: Response) => {
+postRoute.post('/createPost', authorizationMiddleware, async (req: Request, res: Response) => {
   try {
     await postService.create(req.body.title, req.body.content, req.body.userId, req.body)
     res.status(200).send({ message: 'Mensagem adicionado com sucesso!' })
@@ -38,7 +38,7 @@ postRoute.post('/createPost', async (req: Request, res: Response) => {
 })
 
 //atualizar
-postRoute.patch('/update/:id', async (req: Request, res: Response) => {
+postRoute.patch('/update/:id', authorizationMiddleware, async (req: Request, res: Response) => {
   const id = req.params.id
   try {
     await postService.update(id, req.body)
@@ -49,7 +49,7 @@ postRoute.patch('/update/:id', async (req: Request, res: Response) => {
 })
 
 //deletar
-postRoute.delete('/remove/:id', async (req: Request, res: Response) => {
+postRoute.delete('/remove/:id', authorizationMiddleware, async (req: Request, res: Response) => {
   try {
     await postService.remove(req.params.id)
     res.status(200).send({ message: 'Mensagem removida com sucesso!' })
@@ -59,7 +59,7 @@ postRoute.delete('/remove/:id', async (req: Request, res: Response) => {
 })
 
 //listar posts de um usuário
-postRoute.get('/postUser/:id', async (req: Request, res: Response) => {
+postRoute.get('/postUser/:id', authorizationMiddleware, async (req: Request, res: Response) => {
   const { id } = req.params
   const { userId } = req.body
   try {

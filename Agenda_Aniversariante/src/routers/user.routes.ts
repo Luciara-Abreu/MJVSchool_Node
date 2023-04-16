@@ -1,5 +1,6 @@
 import { Request, Response, Router } from 'express'
 import userService from '../sercive/user.service'
+import { authorizationMiddleware } from 'src/middlewares/authorization.middleware'
 
 const userRoute = Router()
 
@@ -8,7 +9,7 @@ console.log('✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨�
 console.log('✨ ******* Rotas de User ****************** ✨')
 
 //listar todos
-userRoute.get('/listAll', async (req: Request, res: Response) => {
+userRoute.get('/listAll',  authorizationMiddleware, async (req: Request, res: Response) => {
   try {
     const listUsers = await userService.getAll()
     res.status(200).send(listUsers)
@@ -17,8 +18,9 @@ userRoute.get('/listAll', async (req: Request, res: Response) => {
   }
 })
 
+
 //listar um
-userRoute.get('/listOne/:id', async (req: Request, res: Response) => {
+userRoute.get('/listOne/:id', authorizationMiddleware, async (req: Request, res: Response) => {
   const id = req.params.id
   try {
     const user = await userService.getOne(id)
@@ -29,7 +31,7 @@ userRoute.get('/listOne/:id', async (req: Request, res: Response) => {
 })
 
 //add user
-userRoute.post('/createUser', async (req: Request, res: Response) => {
+userRoute.post('/createUser', authorizationMiddleware, async (req: Request, res: Response) => {
   try {
     await userService.create(req.body.name, req.body.email, req.body)
     res.status(200).send({ message: 'Usuário adicionado com sucesso!' })
@@ -39,7 +41,7 @@ userRoute.post('/createUser', async (req: Request, res: Response) => {
 })
 
 //atualizar
-userRoute.patch('/update/:id', async (req: Request, res: Response) => {
+userRoute.patch('/update/:id', authorizationMiddleware, async (req: Request, res: Response) => {
   const id = req.params.id
   try {
     await userService.update(id, req.body)
@@ -50,7 +52,7 @@ userRoute.patch('/update/:id', async (req: Request, res: Response) => {
 })
 
 //deletar
-userRoute.delete('/remove/:id', async (req: Request, res: Response) => {
+userRoute.delete('/remove/:id', authorizationMiddleware, async (req: Request, res: Response) => {
   const id = req.params.id
   try {
     await userService.remove(id)
