@@ -17,7 +17,7 @@ class PostService {
     this.getByIdValid(id)
     const idPost = await postRepository.getById(id)
     if (!idPost) {
-      throw new Error('Mensagem não encontrada 👻')
+      throw new Error('Mensagem não encontrado 👻')
     }
     return idPost
   }
@@ -72,10 +72,10 @@ class PostService {
     return showList
   }
 
-    //validar Id
-    public getByIdValid(_id: string) {
-      if (!isValidObjectId(_id)) throw new Error('Id invalido 👎🏻')
-    }
+  //validar Id
+  public getByIdValid(_id: string) {
+    if (!isValidObjectId(_id)) throw new Error('Id invalido 👎🏻')
+  }
 }
 
 export default new PostService()

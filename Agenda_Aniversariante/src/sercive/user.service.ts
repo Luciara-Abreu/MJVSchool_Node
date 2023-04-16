@@ -32,7 +32,7 @@ class UserService {
     }
   }
 
-  async update(id: string, user: Partial<IUser>) {    
+  async update(id: string, user: Partial<IUser>) {
     this.getByIdValid(id)
     const idUser = await userRepository.getById(id)
     if (!idUser) {

@@ -79,7 +79,21 @@ class AdmService {
   public getByIdValid(_id: string) {
     if (!isValidObjectId(_id)) throw new Error('Id invalido 👎🏻')
   }
+
+  // Authentication
+  async authorization(email: string, password: string) {
+    const admId = await admRepository.getByEmail(email)
+    if (!admId) {
+      throw new Error('Administrador não encontrado 👻')
+    }
+    const result = await bcrypt.compare(password, admId.password)
+    if (result) {
+      return jwt.sign({ email: admId.email, id: admId.id }, secretJWT, {
+        expiresIn: '1d',
+      })
+    }
+    throw new Error('Falha na autenticação!')
+  }
 }
+
 export default new AdmService()
-
-
