@@ -1,5 +1,6 @@
 import { Request, Response, Router } from 'express'
 import admService from '../sercive/adm.service'
+import AdmToken from '../sercive/adm.token.service'
 import { authorizationMiddleware } from 'src/middlewares/authorization.middleware'
 
 const admRoute = Router()
@@ -62,6 +63,26 @@ admRoute.post('/authorization', async (req: Request, res: Response) => {
   try {
     const token = await admService.authorization(req.body.email, req.body.password)
     res.status(200).send({ token })
+  } catch (error: any) {
+    res.status(401).send({ message: error.message })
+  }
+})
+
+//envio de email para recuperar senha
+admRoute.post('/send', async (req: Request, res: Response) => {
+  try {
+    await AdmToken.SendEmail(req.body.email)
+    res.status(200).send({ message: 'Email enviado com sucesso!' })
+  } catch (error: any) {
+    res.status(401).send({ message: error.message })
+  }
+})
+
+//reset da senha senha
+admRoute.post('/resetPassword', async (req: Request, res: Response) => {
+  try {
+    await AdmToken.ressetPassword(req.body.token, req.body.password, req.body.passwordConfirmation )
+    res.status(200).send({ message: 'Senha alterada com sucesso!' })
   } catch (error: any) {
     res.status(401).send({ message: error.message })
   }
