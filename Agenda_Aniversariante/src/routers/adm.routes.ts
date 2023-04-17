@@ -1,6 +1,6 @@
 import { Request, Response, Router } from 'express'
 import admService from '../sercive/adm.service'
-import AdmToken from '../sercive/adm.token.service'
+import AdmToken from '../sercive/adm.password.service'
 import { authorizationMiddleware } from 'src/middlewares/authorization.middleware'
 
 const admRoute = Router()
