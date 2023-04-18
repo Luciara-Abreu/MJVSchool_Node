@@ -2,8 +2,12 @@
 import nodemailer from 'nodemailer'
 import { ISendMail } from 'src/interfaces/email.interface'
 import mailTemplate from '../mail/template.mail.hendlebars'
-
-class EtherealEmail {
+/**
+ * https://nodemailer.com/about/
+ * O Nodemailer é uma biblioteca do NodeJS que possibilita que o sistema,
+ * consiga realizar o envio de e-mail para um usuário.
+ */
+class ResetEmail {
   static async sendMail({ from, to, subject, templateData }: ISendMail): Promise<void> {
     const account = await nodemailer.createTestAccount()
 
@@ -35,4 +39,4 @@ class EtherealEmail {
     console.log('Preview URL  => %s', nodemailer.getTestMessageUrl(message))
   }
 }
-export default EtherealEmail
+export default ResetEmail

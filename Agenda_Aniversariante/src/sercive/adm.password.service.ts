@@ -3,7 +3,7 @@ import bcrypt from 'bcrypt'
 import tokenRepository from 'src/repository/token.repository'
 import { isAfter, addHours } from 'date-fns'
 import { IToken } from 'src/interfaces/token.interface'
-import EtherealEmail from '@config/mail/ethereal.mail'
+import ResetEmail from '@config/mail/reset.mail'
 import { resolve } from 'path'
 
 class AdmToken {
@@ -20,7 +20,7 @@ class AdmToken {
 
     const sendEmail = resolve(`src/config/mail/views/send.password.hbs`)
 
-    await EtherealEmail.sendMail({
+    await ResetEmail.sendMail({
       to: {
         name: admId.name,
         email: admId.email,

@@ -1,8 +1,13 @@
 import Handlebars from 'handlebars'
 import { IParseMailTemplate } from 'src/interfaces/email.interface'
 import fs from 'fs'
+/**
+ * https://handlebarsjs.com/guide/#installation
+ * Handlebars é uma linguagem de programação utilizada para trabalhar com templates. 
+ * Ele usa um modelo e um objeto de entrada para gerar HTML ou outros formatos de texto. 
+ * Os modelos Handlebars se parecem com texto normal com expressões Handlebars incorporadas.
+ */
 
-//Em vez de fazer um parse de uma string, agora fará um parde de um arquivo que está sendo enviado por paramentro 
 
 class HandlebarTemplate {
   public async parse({ file, variables }: IParseMailTemplate): Promise<string> {
@@ -17,4 +22,3 @@ class HandlebarTemplate {
 
 export default new HandlebarTemplate()
 
-// Esse arquivo eu tenho que estudar de outras formas para aprender mais. Ficou um pouco confuso
