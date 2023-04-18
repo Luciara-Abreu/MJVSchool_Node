@@ -30,8 +30,8 @@ class AdmToken {
         file: sendEmail,
         variables: {
           name: admId.name,
-          link: `http://localhost:3000/adm/resetPassword?token=${admToken.token}`,
-          //token: admToken.token,
+          token: `Tokem para resetar a senha ==> 
+          ${admToken.token}`,
         },
       },
     })
