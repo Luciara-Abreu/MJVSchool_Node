@@ -99,7 +99,7 @@ Obrigada Nathan,
 Obrigada Ieda,
 Obrigada outra moça do RH que me entrevistou. (Me perdoe, esqueci seu nome),
 Obrigada Alan,
-Obrigada pela troca de conhecimento. 
+Obrigada Colegas pela troca de conhecimento. 
 Obrigada a todos os envolvidos, Só tenho a agradecer!!
 
 
