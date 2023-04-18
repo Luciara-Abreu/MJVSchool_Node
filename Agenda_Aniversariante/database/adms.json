@@ -1,0 +1,131 @@
+[{
+  "_id": {
+    "$oid": "6431e67d3a784c8eb05d4123"
+  },
+  "name": "Eli de Sá",
+  "birthDate": {
+    "$date": {
+      "$numberLong": "-388800000000"
+    }
+  },
+  "sexualOrientation": "F",
+  "email": "eli.ds@gmail.com",
+  "fone": "12 1269833333",
+  "avatar": "🙂",
+  "password": "$2a$08$ktbMP9UgPK8juAQvlKlSf.oUQ1L5tqxyQBBsY6IcYYCAyL7RC.OrC",
+  "createdAt": {
+    "$date": "2023-04-08T22:10:34.612Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6431ee0f3a784c8eb05d4128"
+  },
+  "name": "Eder Dias",
+  "birthDate": {
+    "$date": "1978-03-18T00:00:00.000Z"
+  },
+  "sexualOrientation": "F",
+  "email": "eder.d@gmail.com",
+  "fone": "55 2369833333",
+  "avatar": "🙂",
+  "password": "$2a$08$rWoanpaYsQsdOKeT3ilr9OWjkigGGZ8a1cEkkbnnFRky4i/6gl60q",
+  "createdAt": {
+    "$date": "2023-04-08T22:10:34.612Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6431ee2b3a784c8eb05d412d"
+  },
+  "name": "Lucas Abreu",
+  "birthDate": {
+    "$date": "1990-09-22T00:00:00.000Z"
+  },
+  "sexualOrientation": "F",
+  "email": "lucas.abreu@gmail.com",
+  "fone": "50 5369833333",
+  "avatar": "🙂",
+  "password": "$2a$08$IxLiXalA/C5SdYkMJraGN.spDWXd4DstyJBrfMFUcDPbikzSB661i",
+  "createdAt": {
+    "$date": "2023-04-08T22:10:34.612Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6431ee613a784c8eb05d4132"
+  },
+  "name": "Luci Abreu",
+  "birthDate": {
+    "$date": "1977-08-22T00:00:00.000Z"
+  },
+  "sexualOrientation": "F",
+  "email": "luciara.abreu@gmail.com",
+  "fone": "51 5369833333",
+  "avatar": "🙂",
+  "password": "$2b$10$kbKmIgM9gjA5WmMSLJB0EOARDOCihmXnhmbvWRwMvsXs/WSjKmswC",
+  "createdAt": {
+    "$date": "2023-04-08T22:10:34.612Z"
+  },
+  "__v": 0,
+  "updatedAt": {
+    "$date": "2023-04-16T23:50:31.869Z"
+  }
+},{
+  "_id": {
+    "$oid": "643af535acb74c2cf1c9c0e3"
+  },
+  "name": "Vera SDias",
+  "birthDate": {
+    "$date": {
+      "$numberLong": "-491616000000"
+    }
+  },
+  "sexualOrientation": "F",
+  "email": "vera.sdias@gmail.com",
+  "fone": "13 4333333333",
+  "avatar": "🙂",
+  "password": "$2b$10$Af4wo421cxF9N7OmUoZH2uSAblDEyBsOvxiY4RO7r/7DS/hj/Iofe",
+  "createdAt": {
+    "$date": "2023-04-15T19:00:47.159Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "643bfde9acfcf4bf04f3e4e4"
+  },
+  "name": "Hipátia Alexandria",
+  "birthDate": {
+    "$date": {
+      "$numberLong": "-49465457612000"
+    }
+  },
+  "sexualOrientation": "F",
+  "email": "hipatia.a@gmail.com",
+  "fone": "23 2333333333",
+  "avatar": "🙂",
+  "password": "$2b$10$R3kH9U1F1XFWeUg2jPkdxOifoG25zwHy6vBA6j8bZ.T1cz1kr.BoW",
+  "createdAt": {
+    "$date": "2023-04-16T13:50:30.359Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "643c4adaad87471bc58ebbaf"
+  },
+  "name": "Aspatia Souza",
+  "birthDate": {
+    "$date": {
+      "$numberLong": "-46220187212000"
+    }
+  },
+  "sexualOrientation": "F",
+  "email": "aspatia.s@gmail.com",
+  "fone": "33 3333333333",
+  "avatar": "🙂",
+  "password": "$2b$10$Wx5YUH7xdrn3e6mZ3YLNvOB/u2GsZ5CC2qr9jH1G8D2olmWBTDU6K",
+  "createdAt": {
+    "$date": "2023-04-16T14:42:04.854Z"
+  },
+  "__v": 0
+}]

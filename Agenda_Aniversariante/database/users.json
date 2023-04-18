@@ -1,0 +1,687 @@
+[{
+  "_id": {
+    "$oid": "642efc7daf719c210fda8ecc"
+  },
+  "name": "Andersom Pedro Antonio",
+  "birthDate": {
+    "$date": "1990-03-18T03:00:00.000Z"
+  },
+  "sexualOrientation": "M",
+  "email": "anderson.p.a@gmail.com",
+  "fone": "54 665544551",
+  "createdAt": {
+    "$date": "2023-04-06T17:08:10.254Z"
+  },
+  "__v": 0,
+  "avatar": "😄"
+},{
+  "_id": {
+    "$oid": "642efcabaf719c210fda8ed1"
+  },
+  "name": "Madalena Arrependida",
+  "birthDate": {
+    "$date": "1970-09-22T00:00:00.000Z"
+  },
+  "sexualOrientation": "F",
+  "email": "madalena.m@gmail.com",
+  "fone": "55 765544551",
+  "createdAt": {
+    "$date": "2023-04-06T17:08:10.254Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "642efce1af719c210fda8ed6"
+  },
+  "id": "1",
+  "name": "Florisberta Beija",
+  "birthDate": {
+    "$date": "1980-04-12T00:00:00.000Z"
+  },
+  "sexualOrientation": "F",
+  "email": "florisberta.b@gmail.com",
+  "fone": "52 165544551",
+  "createdAt": {
+    "$date": "2023-04-06T17:08:10.254Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "642efd0eaf719c210fda8edb"
+  },
+  "name": "Cacildiz Pereira",
+  "birthDate": {
+    "$date": "1990-03-02T00:00:00.000Z"
+  },
+  "sexualOrientation": "F",
+  "email": "Cacildiz..p@gmail.com",
+  "fone": "55 125544551",
+  "createdAt": {
+    "$date": "2023-04-06T17:08:10.254Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64139f9684b1575c6e8d5581"
+  },
+  "name": "Éli Izabel Souza",
+  "birthDate": {
+    "$date": {
+      "$numberLong": "-483494400000"
+    }
+  },
+  "sexualOrientation": "F",
+  "email": "izabel.abreu.a@gmail.com",
+  "lastEmail": "-",
+  "fone": "21 123456123",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6414ad87f5174859371d77ca"
+  },
+  "name": "Dinara Moura",
+  "birthDate": {
+    "$date": "1993-12-21T00:00:00.000Z"
+  },
+  "sexualOrientation": "F",
+  "email": "dinara.moura@gmail.com",
+  "lastEmail": "-",
+  "fone": "55 3333333333",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6414ad99f5174859371d77cc"
+  },
+  "name": "Margarida Catarina Da Silva Madureira",
+  "birthDate": {
+    "$date": "1989-12-13T02:00:00.000Z"
+  },
+  "sexualOrientation": "F",
+  "email": "marga.catarina@gmail.com",
+  "lastEmail": "-",
+  "fone": "32 222223331",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6414adabf5174859371d77ce"
+  },
+  "name": "Petúnia Flores da Rosa",
+  "birthDate": {
+    "$date": "1980-12-23T03:00:00.000Z"
+  },
+  "sexualOrientation": "F",
+  "email": "petunia@gmail.com",
+  "lastEmail": "-",
+  "fone": "54 985554331",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6414adb8f5174859371d77d0"
+  },
+  "name": "Camila Ribeiro Ernestides ",
+  "birthDate": {
+    "$date": "1982-12-14T03:00:00.000Z"
+  },
+  "sexualOrientation": "F",
+  "email": "camila@gmail.com",
+  "lastEmail": "-",
+  "fone": "87 77777888",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6414adc8f5174859371d77d2"
+  },
+  "name": "Nayelle Benedita de Almeida",
+  "birthDate": {
+    "$date": "2011-01-21T02:00:00.000Z"
+  },
+  "sexualOrientation": "F",
+  "email": "nayelle@gmail.com",
+  "lastEmail": "-",
+  "fone": "34 999999394",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6414add8f5174859371d77d4"
+  },
+  "name": "Luci Abreu",
+  "birthDate": {
+    "$date": "1980-12-22T03:00:00.000Z"
+  },
+  "sexualOrientation": "F",
+  "email": "luciara.abreu@gmail.com",
+  "lastEmail": "-",
+  "fone": "51 984539391",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6414ade6f5174859371d77d6"
+  },
+  "name": "Aparecida Hippolyte Léon da Rocha",
+  "birthDate": {
+    "$date": "1980-05-07T03:00:00.000Z"
+  },
+  "sexualOrientation": "F",
+  "email": "aparecida.h@gmail.com",
+  "lastEmail": "-",
+  "fone": "44 2136654551",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6414adf4f5174859371d77d8"
+  },
+  "name": "Éder Schelski Dias ",
+  "birthDate": {
+    "$date": "1979-12-18T03:00:00.000Z"
+  },
+  "sexualOrientation": "M",
+  "email": "eder.dias18@gmail.com",
+  "lastEmail": "-",
+  "fone": "51 984785159",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6414ae01f5174859371d77da"
+  },
+  "name": "Almeida Junior",
+  "birthDate": {
+    "$date": "1990-12-18T02:00:00.000Z"
+  },
+  "sexualOrientation": "M",
+  "email": "junior.a@gmail.com",
+  "lastEmail": "-",
+  "fone": "51333331551",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6414ae0cf5174859371d77dc"
+  },
+  "name": "Andersom Pedro Antonio",
+  "birthDate": {
+    "$date": "1990-03-18T03:00:00.000Z"
+  },
+  "sexualOrientation": "M",
+  "email": "anderson.p.a@gmail.com",
+  "lastEmail": "-",
+  "fone": "54 665544551",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6414ae17f5174859371d77de"
+  },
+  "name": "Pedro Antonio Denizard Rivail ",
+  "birthDate": {
+    "$date": "1979-07-25T03:00:00.000Z"
+  },
+  "sexualOrientation": "M",
+  "email": "pedro.a@gmail.com",
+  "lastEmail": "-",
+  "fone": "21 223135461",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6414ae24f5174859371d77e0"
+  },
+  "name": "Pedro Muller ",
+  "birthDate": {
+    "$date": "1973-09-22T03:00:00.000Z"
+  },
+  "sexualOrientation": "M",
+  "email": "pedro.muller@gmail.com",
+  "lastEmail": "-",
+  "fone": "55 35413384",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6414ae30f5174859371d77e2"
+  },
+  "name": "Anna Catarina",
+  "birthDate": {
+    "$date": "1970-08-02T03:00:00.000Z"
+  },
+  "sexualOrientation": "F",
+  "email": "anna.anna@gmail.com",
+  "lastEmail": "-",
+  "fone": "51 354354213",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6414ae3bf5174859371d77e4"
+  },
+  "name": "Lucas Abreu",
+  "birthDate": {
+    "$date": "2016-09-22T03:00:00.000Z"
+  },
+  "sexualOrientation": "M",
+  "email": "Lucas.abreudias@gmail.com",
+  "lastEmail": "-",
+  "fone": "51 33355511",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6414ae48f5174859371d77e6"
+  },
+  "name": "Anna Lucia Medeiros",
+  "birthDate": {
+    "$date": "2016-02-25T03:00:00.000Z"
+  },
+  "sexualOrientation": "F",
+  "email": "anna.LM@gmail.com",
+  "lastEmail": "-",
+  "fone": "51 3452315",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6414ae52f5174859371d77e8"
+  },
+  "name": "Antonina Avelino de Sá",
+  "birthDate": {
+    "$date": {
+      "$numberLong": "-617058000000"
+    }
+  },
+  "sexualOrientation": "F",
+  "email": "anotonina.as@gmail.com",
+  "lastEmail": "-",
+  "fone": "51333334564",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6414ae5ff5174859371d77ea"
+  },
+  "name": "João Vilmar de Abreu",
+  "birthDate": {
+    "$date": {
+      "$numberLong": "-613515600000"
+    }
+  },
+  "sexualOrientation": "M",
+  "email": "joão.vilmarabreu@gmail.com",
+  "lastEmail": "-",
+  "fone": "33 33351513",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6414aebd9d52326e4fc85fc9"
+  },
+  "name": "Carlos Camargo",
+  "birthDate": {
+    "$date": "1975-02-04T00:00:00.000Z"
+  },
+  "sexualOrientation": "M",
+  "email": "carlos.c@gmail.com",
+  "lastEmail": "-",
+  "fone": "31 2121212121",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6414aecf9d52326e4fc85fcb"
+  },
+  "name": "Bruno Eliandrer Santos",
+  "birthDate": {
+    "$date": "1985-05-14T00:00:00.000Z"
+  },
+  "sexualOrientation": "M",
+  "email": "bruno.e@gmail.com",
+  "lastEmail": "-",
+  "fone": "31 2121212121",
+  "__v": 0,
+  "avatar": "😍"
+},{
+  "_id": {
+    "$oid": "6414c05ac45806adcbad4dbe"
+  },
+  "name": "Rosangela Santos",
+  "birthDate": {
+    "$date": "1992-11-25T00:00:00.000Z"
+  },
+  "sexualOrientation": "F",
+  "email": "rosangela.s@gmail.com",
+  "lastEmail": "-",
+  "fone": "53 1121212121",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6414c0db8752f1c692ae1dee"
+  },
+  "name": "Beatriz Jermania",
+  "birthDate": {
+    "$date": "1995-10-02T03:00:00.000Z"
+  },
+  "sexualOrientation": "F",
+  "email": "bea.germania@gmail.com",
+  "lastEmail": "-",
+  "fone": "23 1521212121",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6414c17df363368147461a8f"
+  },
+  "name": "Roberto Cavalcante",
+  "birthDate": {
+    "$date": "1975-01-20T00:00:00.000Z"
+  },
+  "sexualOrientation": "F",
+  "email": "roberto.c@gmail.com",
+  "lastEmail": "-",
+  "fone": "11 151112121",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6418a0c162e8eca21405b97d"
+  },
+  "name": "Jozefa Pedriny",
+  "birthDate": {
+    "$date": "1980-10-01T00:00:00.000Z"
+  },
+  "sexualOrientation": "F",
+  "email": "jozefa.p@gmail.com",
+  "lastEmail": "-",
+  "fone": "11 351112121",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6418ac15331808bb111b984b"
+  },
+  "name": "Aparecida Araujo",
+  "sexualOrientation": "F",
+  "email": "aparecida.a@gmail.com",
+  "lastEmail": "-",
+  "fone": "12 551112121",
+  "__v": 0,
+  "birthDate": {
+    "$date": "1983-11-13T00:00:00.000Z"
+  }
+},{
+  "_id": {
+    "$oid": "6418b30ebdff201eed1da4d6"
+  },
+  "name": "Raul Seixas",
+  "birthdate": {
+    "$date": {
+      "$numberLong": "-773539200000"
+    }
+  },
+  "sexualOrientation": "M",
+  "email": "raulzito.s@gmail.com",
+  "lastEmail": "-",
+  "fone": "83 31112121",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6418b586434463b11eabd9ac"
+  },
+  "name": "Daiane Abreu",
+  "birthDate": {
+    "$date": "1983-08-17T00:00:00.000Z"
+  },
+  "sexualOrientation": "F",
+  "email": "daiane.a@gmail.com",
+  "lastEmail": "-",
+  "fone": "51 222112121",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6418b5ca434463b11eabd9ae"
+  },
+  "name": "Irã Dias",
+  "birthDate": {
+    "$date": {
+      "$numberLong": "-939600000000"
+    }
+  },
+  "sexualOrientation": "F",
+  "email": "ira.d@gmail.com",
+  "lastEmail": "-",
+  "fone": "51 322112121",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6418ba6be6d4c9587792885a"
+  },
+  "name": "Alexandre Dias",
+  "birthDate": {
+    "$date": "1983-04-01T00:00:00.000Z"
+  },
+  "sexualOrientation": "F",
+  "email": "ale.d@gmail.com",
+  "lastEmail": "-",
+  "fone": "51 822112121",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6418bb0d6b9e9c48aa93ea27"
+  },
+  "name": "Pedro Paulo",
+  "birthDate": {
+    "$date": "1982-04-11T00:00:00.000Z"
+  },
+  "sexualOrientation": "F",
+  "email": "pedro.p@gmail.com",
+  "lastEmail": "-",
+  "fone": "53 722112121",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6418c92dd51f48f4990c5681"
+  },
+  "name": "Mauricio Castor",
+  "birthDate": {
+    "$date": "1972-02-12T00:00:00.000Z"
+  },
+  "sexualOrientation": "M",
+  "email": "Mauricio.C@gmail.com",
+  "lastEmail": "-",
+  "fone": "43 722112121",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6418c9f8edf57f45a0ee3e94"
+  },
+  "name": "Thiago Manollo",
+  "birthDate": {
+    "$date": "1992-02-02T00:00:00.000Z"
+  },
+  "sexualOrientation": "M",
+  "email": "thiago.m@gmail.com",
+  "lastEmail": "-",
+  "fone": "44 922112121",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6418e0adf399a5a4d8c61583"
+  },
+  "name": "Julio Leal",
+  "birthDate": {
+    "$date": "1987-12-22T00:00:00.000Z"
+  },
+  "sexualOrientation": "M",
+  "email": "julio.l@gmail.com",
+  "lastEmail": "-",
+  "fone": "45 752112121",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6418e18b866f4c966642b237"
+  },
+  "name": "Julio Moreira",
+  "birthDate": {
+    "$date": "1977-11-12T00:00:00.000Z"
+  },
+  "sexualOrientation": "M",
+  "email": "julio.m@gmail.com",
+  "lastEmail": "-",
+  "fone": "40 772112121",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6418e37f4f35af6e375f8350"
+  },
+  "name": "Eliane Ferreira",
+  "birthDate": {
+    "$date": "1987-05-07T00:00:00.000Z"
+  },
+  "sexualOrientation": "F",
+  "email": "eliane.f@gmail.com",
+  "lastEmail": "-",
+  "fone": "10 772112121",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6418e594c8d1782be7f4eaa3"
+  },
+  "name": "Tatiana Camargo",
+  "birthDate": {
+    "$date": "1989-04-07T00:00:00.000Z"
+  },
+  "sexualOrientation": "M",
+  "email": "Carlos.c@gmail.com",
+  "lastEmail": "-",
+  "fone": "12 372112121",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6419eb19cc79cb53870cf763"
+  },
+  "name": "Fernanda Martins",
+  "birthDate": {
+    "$date": "1986-06-29T00:00:00.000Z"
+  },
+  "sexualOrientation": "M",
+  "email": "fernanda.m@gmail.com",
+  "lastEmail": "-",
+  "fone": "42 372112121",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "641f687c01a97721ff9dfcee"
+  },
+  "name": "josselaine Silva",
+  "birthDate": {
+    "$date": "2007-07-17T00:00:00.000Z"
+  },
+  "sexualOrientation": "F",
+  "email": "josselaine.s@gmail.com",
+  "lastEmail": "-",
+  "fone": "10 102112121",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "642075bb023d99b56100f29a"
+  },
+  "name": "Joselito Seresta",
+  "birthDate": {
+    "$date": "2008-07-17T00:00:00.000Z"
+  },
+  "sexualOrientation": "M",
+  "email": "joselito.s@gmail.com",
+  "lastEmail": "-",
+  "fone": "14 142112121",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "642079280ed2266392172b03"
+  },
+  "name": "Hipátia Lunnar",
+  "birthDate": {
+    "$date": "2009-09-19T00:00:00.000Z"
+  },
+  "sexualOrientation": "F",
+  "email": "hipatia.l@gmail.com",
+  "lastEmail": "-",
+  "fone": "14 142112121",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6421ec232935f884aad32eb5"
+  },
+  "name": "Aspásia de Mileto",
+  "birthDate": {
+    "$date": {
+      "$numberLong": "-9383731200000"
+    }
+  },
+  "sexualOrientation": "F",
+  "email": "aspásia.m@gmail.com",
+  "lastEmail": "-",
+  "fone": "14 142112121",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "642f4f3b0d33936b2231866a"
+  },
+  "name": "Arlindo Oranlando",
+  "birthDate": {
+    "$date": "1970-04-28T00:00:00.000Z"
+  },
+  "sexualOrientation": "M",
+  "email": "arlindao.o@gmail.com",
+  "fone": "52 325544551",
+  "createdAt": {
+    "$date": "2023-04-06T23:00:22.082Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "642f4fd97bcd3d23de24a501"
+  },
+  "name": "Arlindo pereira",
+  "birthDate": {
+    "$date": "1971-04-28T00:00:00.000Z"
+  },
+  "sexualOrientation": "M",
+  "email": "arlindo.o@gmail.com",
+  "fone": "52 325544551",
+  "createdAt": {
+    "$date": "2023-04-06T23:02:54.291Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "643487a006f18b826d88d69b"
+  },
+  "name": "Arnorldo Orlando",
+  "birthDate": {
+    "$date": "1981-01-18T00:00:00.000Z"
+  },
+  "sexualOrientation": "M",
+  "email": "arnoldo.o@gmail.com",
+  "fone": "51 125544551",
+  "avatar": "😄",
+  "createdAt": {
+    "$date": "2023-04-10T22:00:29.048Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "643af98367e1f06a72dff93a"
+  },
+  "name": "Perpetua Flores",
+  "birthDate": {
+    "$date": "1985-05-28T00:00:00.000Z"
+  },
+  "sexualOrientation": "F",
+  "email": "perpetua.f@gmail.com",
+  "fone": "55 525544551",
+  "avatar": "😍",
+  "createdAt": {
+    "$date": "2023-04-15T19:18:09.280Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "643b4631fd779bd37db82c54"
+  },
+  "name": "Anastacia Fernandez",
+  "birthDate": {
+    "$date": "1985-05-28T00:00:00.000Z"
+  },
+  "sexualOrientation": "F",
+  "email": "anastacia.f@gmail.com",
+  "fone": "15 125544551",
+  "avatar": "😍",
+  "createdAt": {
+    "$date": "2023-04-16T00:49:29.330Z"
+  },
+  "__v": 0
+}]
