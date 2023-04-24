@@ -32,7 +32,7 @@ class SendWhatsApp {
       throw new Error('Usuário não encontrado!')
     }
 
-    const titlePattern = ` Ola! ${user.name}!, 
+    const titlePattern = ` Ola! ${user.name}! 🥳🎉, 
     ${title} 
     ${message}.      
     São os votos da ${process.env.EQUIPE_USER} 🙌`
