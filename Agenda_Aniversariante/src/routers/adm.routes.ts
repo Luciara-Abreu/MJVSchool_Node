@@ -5,8 +5,6 @@ import { authorizationMiddleware } from 'src/middlewares/authorization.middlewar
 
 const admRoute = Router()
 
-console.log('✨ ******* Rotas de Adm ******************* ✨')
-
 //listar todos
 admRoute.get('/ListAll', authorizationMiddleware, async (req: Request, res: Response) => {
   try {

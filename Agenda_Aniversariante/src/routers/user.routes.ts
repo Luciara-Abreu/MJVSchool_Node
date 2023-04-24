@@ -4,9 +4,6 @@ import { authorizationMiddleware } from 'src/middlewares/authorization.middlewar
 
 const userRoute = Router()
 
-console.log('')
-console.log('✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨')
-console.log('✨ ******* Rotas de User ****************** ✨')
 
 //listar todos
 userRoute.get('/listAll',  authorizationMiddleware, async (req: Request, res: Response) => {
