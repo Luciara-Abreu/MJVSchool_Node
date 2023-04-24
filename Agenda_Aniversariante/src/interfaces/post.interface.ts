@@ -3,6 +3,6 @@ export interface IPost {
   title: string
   content: string
   userId: string
-  createdAt: Date
-  updatedAt: Date
+  createdAt?: Date
+  updatedAt?: Date
 }

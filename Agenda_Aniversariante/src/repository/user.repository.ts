@@ -19,6 +19,10 @@ class UserRepository {
   getByEmail(email: string) {
     return User.findOne({ email: email })
   }
+  
+  getByFone(fone: string) {
+    return User.findOne({ fone: fone })
+  }
 
   create(user: IUser) {
     return User.create(user)
