@@ -6,3 +6,9 @@ export interface IPost {
   createdAt?: Date
   updatedAt?: Date
 }
+
+export interface IToEmail {
+  email:string
+  title: string
+  content: string   
+}

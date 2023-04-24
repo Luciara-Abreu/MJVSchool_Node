@@ -2,6 +2,7 @@ import { Request, Response, Router } from 'express'
 import postService from '../sercive/post.service'
 import { authorizationMiddleware } from 'src/middlewares/authorization.middleware'
 import sendWhatsApp from '../sercive/send.whatsapp.service'
+import sendPostEmail from '../sercive/send.email.service'
 
 const postRoute = Router()
 
@@ -80,13 +81,14 @@ postRoute.post('/SendWhatsApp', async (req: Request, res: Response) => {
   }
 })
 
-/*postRoute.post('/SendPostEmail', async (req: Request, res: Response) => {
+postRoute.post('/SendPostEmail', async (req: Request, res: Response) => {
   const {email, title, content}= req.body
   try {
-    await SendPostMail.SendPostEmail({email, title, content})
+    await sendPostEmail.sendPostemail({email, title, content})
     return res.status(200).json('Mensagem enviada com Sucesso!')
   } catch (error: any) {
     res.status(400).send({ message: error.message })
-  }*/
+  }
+})
 
 export default postRoute
