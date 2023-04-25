@@ -4,10 +4,11 @@ import admRepository from '../repository/adm.repository'
 import bcrypt from 'bcrypt'
 import dotenv from 'dotenv'
 import jwt from 'jsonwebtoken'
+import secret from '../secret'
 import tokenRepository from 'src/repository/token.repository'
 
 dotenv.config()
-const secretJWT = process.env.JWT_SECRET_KEY || ''
+const secretJWT = process.env.JWT_SECRET_KEY || secret.JWT_SECRET_KEY || ''
 
 class AdmService {
   async getAll() {

@@ -6,10 +6,11 @@ import { IToken } from 'src/interfaces/token.interface'
 import nodemailer from 'nodemailer'
 import dotenv from 'dotenv'
 import jwt from 'jsonwebtoken'
+import secret from '../secret'
 
 dotenv.config()
 
-const secretJWT = process.env.JWT_SECRET_KEY || ''
+const secretJWT = process.env.JWT_SECRET_KEY || secret.JWT_SECRET_KEY || ''
 
 class ResetPasswordAdmService {
   // Envio de e-mail
@@ -32,7 +33,7 @@ class ResetPasswordAdmService {
       secure: true,
       auth: {
         user: process.env.USERMAIL,
-        pass: process.env.PASSMAIL,
+        pass: secret.SECRET_PASSMAIL || process.env.PASSMAIL,
       },
     })
 

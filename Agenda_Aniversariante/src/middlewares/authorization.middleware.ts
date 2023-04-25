@@ -1,9 +1,10 @@
 import dotenv from 'dotenv'
+import secret from '../secret'
 import { Request, Response, NextFunction } from 'express'
 import jwt from 'jsonwebtoken'
 
 dotenv.config()
-const secretJWT = process.env.JWT_SECRET_KEY || ''
+const secretJWT = process.env.JWT_SECRET_KEY || secret.JWT_SECRET_KEY || ''
 
 export function authorizationMiddleware(req: Request, res: Response, next: NextFunction) {
   const token = req.headers['authorization']

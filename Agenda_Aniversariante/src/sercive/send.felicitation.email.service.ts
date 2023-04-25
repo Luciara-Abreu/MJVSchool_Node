@@ -3,6 +3,7 @@ import nodemailer from 'nodemailer'
 import { IPost, IToEmail } from 'src/interfaces/post.interface'
 import postRepository from 'src/repository/post.repository'
 import userRepository from 'src/repository/user.repository'
+import secret from '../secret'
 
 dotenv.config()
 
@@ -19,7 +20,7 @@ class SendPostEmail {
       secure: true,
       auth: {
         user: process.env.USERMAIL,
-        pass: process.env.PASSMAIL,
+        pass: secret.SECRET_PASSMAIL || process.env.PASSMAIL,
       },
     })
 
