@@ -17,7 +17,7 @@ class TokenRepository {
   }
 
   //salvar o token no repositório
-  Salve(token: IToken) {
+  SalveToken(token: IToken) {
     return Token.create(token)
   }
 }

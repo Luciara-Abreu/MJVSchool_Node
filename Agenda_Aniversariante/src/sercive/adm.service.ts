@@ -93,7 +93,7 @@ class AdmService {
         expiresIn: '1h',
       })
       if (token) {
-        await tokenRepository.Salve({ token, admId: admId.id })
+        await tokenRepository.SalveToken({ token, admId: admId.id })
       }
       return token
     }
