@@ -17,7 +17,7 @@ class PostService {
     this.getByIdValid(id)
     const idPost = await postRepository.getById(id)
     if (!idPost) {
-      throw new Error('Mensagem não encontrado 👻')
+      throw new Error('Mensagem não encontrada 👻')
     }
     return idPost
   }

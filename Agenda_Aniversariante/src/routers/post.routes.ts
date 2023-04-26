@@ -18,9 +18,8 @@ postRoute.get('/listAll', authorizationMiddleware, async (req: Request, res: Res
 
 //listar um
 postRoute.get('/listOne/:id', authorizationMiddleware, async (req: Request, res: Response) => {
-  const id = req.params.id
   try {
-    const post = await postService.getOne(id)
+    const post = await postService.getOne(req.params.id)
     res.status(200).send(post)
   } catch (error: any) {
     res.status(400).send({ message: error.message })
