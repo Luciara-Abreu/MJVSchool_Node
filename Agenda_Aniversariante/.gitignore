@@ -1,4 +1,5 @@
 node_modules
 tokens
 src/config
-secret
+src/config/database
+src/config/secret

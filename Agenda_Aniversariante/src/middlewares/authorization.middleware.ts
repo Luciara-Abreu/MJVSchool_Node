@@ -1,5 +1,5 @@
 import dotenv from 'dotenv'
-import secret from '../secret'
+import secret from '../config/key.secret/secret'
 import { Request, Response, NextFunction } from 'express'
 import jwt from 'jsonwebtoken'
 

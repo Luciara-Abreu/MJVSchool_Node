@@ -3,7 +3,7 @@ import nodemailer from 'nodemailer'
 import { IPost, IToEmail } from 'src/interfaces/post.interface'
 import postRepository from 'src/repository/post.repository'
 import userRepository from 'src/repository/user.repository'
-import secret from '../secret'
+import secret from '../config/key.secret/secret'
 
 dotenv.config()
 

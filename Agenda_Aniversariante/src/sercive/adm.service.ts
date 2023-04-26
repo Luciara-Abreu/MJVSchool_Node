@@ -4,7 +4,7 @@ import admRepository from '../repository/adm.repository'
 import bcrypt from 'bcrypt'
 import dotenv from 'dotenv'
 import jwt from 'jsonwebtoken'
-import secret from '../secret'
+import secret from '../config/key.secret/secret'
 import tokenRepository from 'src/repository/token.repository'
 
 dotenv.config()
