@@ -28,22 +28,22 @@ class AdmService {
     return idAdm
   }
 
-  async create(name: string, email: string, adm: IAdm) {
-    const thisName = await admRepository.getByName(name)
-    const thisEmail = await admRepository.getByEmail(email)
+  async create(name: string, email: string, birthDate: string, adm: IAdm) {
+    const admName = await admRepository.getByName(name)
+    const admEmail = await admRepository.getByEmail(email)
+    const admDate = await admRepository.getByBirthDate(birthDate)
 
-    if (thisName?.name === String(adm.name)) {
-      throw new Error('Nome invalido')
+    if (!admName || !admDate) {
+      if (admEmail) {
+        throw new Error('1 - Usuário já cadastrado')
+      }
+      if (adm.password) {
+        adm.password = await bcrypt.hash(adm.password, 10)
+      }
+      return admRepository.create(adm)
+    } else {
+      throw new Error('2 - Usuário já cadastrado')
     }
-
-    if (thisEmail?.email === String(adm.email)) {
-      throw new Error('Email invalido')
-    }
-
-    if (adm.password) {
-      adm.password = await bcrypt.hash(adm.password, 10)
-    }
-    return admRepository.create(adm)
   }
 
   async update(id: string, name: string, email: string, adm: Partial<IAdm>) {
@@ -91,11 +91,12 @@ class AdmService {
     const result = await bcrypt.compare(password, admId.password)
     if (result) {
       const token = jwt.sign({ email: admId.email, id: admId.id }, secretJWT, {
-        expiresIn: '1h',
+        expiresIn: '5h',
       })
-      if (token) {
-        await tokenRepository.SalveToken({ token, admId: admId.id })
+      if (!token) {
+        throw new Error('Falha na autenticação!')
       }
+      await tokenRepository.SalveToken({ token, admId: admId.id })
       return token
     }
     throw new Error('Falha na autenticação!')

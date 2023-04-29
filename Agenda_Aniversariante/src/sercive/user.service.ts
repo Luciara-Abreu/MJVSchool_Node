@@ -21,12 +21,16 @@ class UserService {
     return idUser
   }
 
-  async create(name: string, email: string, newUSer: IUser) {
+  async create(name: string, email: string, birthDate: string, newUSer: IUser) {
     const userName = await userRepository.getByName(name)
     const userEmail = await userRepository.getByEmail(email)
+    const userDate = await userRepository.getByBirthDate(birthDate)
 
-    if (!userName && !userEmail) {
-      return await userRepository.create(newUSer)
+    if (!userName || !userDate) {
+      if (userEmail) {
+        throw new Error('Usuário já cadastrado')
+      }
+      return userRepository.create(newUSer)
     } else {
       throw new Error('Usuário já cadastrado')
     }
