@@ -1,5 +1,5 @@
 # MJVSchool_Node
 
 <div alin="center">
-<img src='https://user-images.githubusercontent.com/36546342/232256013-b4721708-4c0f-4316-9c0b-05b22be6b792.JPG'/>
+<img src='https://user-images.githubusercontent.com/36546342/236071998-52329224-5b5e-4ba2-9bba-6f29a451b505.JPG'/>
 </div>
