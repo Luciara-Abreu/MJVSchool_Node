@@ -35,14 +35,14 @@ class AdmService {
 
     if (!admName || !admDate) {
       if (admEmail) {
-        throw new Error('1 - Usuário já cadastrado')
+        throw new Error('Usuário já cadastrado')
       }
       if (adm.password) {
         adm.password = await bcrypt.hash(adm.password, 10)
       }
       return admRepository.create(adm)
     } else {
-      throw new Error('2 - Usuário já cadastrado')
+      throw new Error('Usuário já cadastrado')
     }
   }
 

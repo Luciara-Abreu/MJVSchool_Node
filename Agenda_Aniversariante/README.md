@@ -107,3 +107,7 @@ Obrigada a todos os envolvidos, Só tenho a agradecer!!
 <img src='https://user-images.githubusercontent.com/36546342/232255585-ceb4f1ac-79ba-4e70-9a8c-7421e4236201.JPG'/>
 </div>
 
+
+Minha apresentação 
+//1:29:51 1:47:56
+
